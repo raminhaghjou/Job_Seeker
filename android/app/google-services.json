@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "14225204287",
+    "firebase_url": "https://dreamjob-id.firebaseio.com",
+    "project_id": "dreamjob-id",
+    "storage_bucket": "dreamjob-id.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14225204287:android:827ec48efa274b1828048a",
+        "android_client_info": {
+          "package_name": "id.dreamjob.space"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14225204287-en96jgf210iiujr92vl01499pq4kkfq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw_vdMGcLGlBmVLNzTqqJArV-CApB-ALE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14225204287-en96jgf210iiujr92vl01499pq4kkfq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
