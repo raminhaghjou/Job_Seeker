@@ -6,8 +6,20 @@ import 'package:space/src/core/models/job.dart';
 
 import './cart.dart';
 
+class ApplyItem {
+  final String id;
+  final List<Job> job;
+  final DateTime dateTime;
+
+  ApplyItem({
+    @required this.id,
+    @required this.job,
+    @required this.dateTime,
+  });
+}
+
 class Applys with ChangeNotifier {
-  List<Job> _applys = [];
+  List<ApplyItem> _applys = [];
   final String authToken;
   final String userId;
 
@@ -18,8 +30,7 @@ class Applys with ChangeNotifier {
   }
 
   Future<void> fetchAndSetApplys() async {
-    final url =
-        'https://dreamjob-id.firebaseio.com/applys/$userId.json?auth=$authToken';
+    final url = 'https://dreamjob-id.firebaseio.com/applys/$userId.json?auth=$authToken';
     final response = await http.get(url);
     final List<ApplyItem> loadedApplys = [];
     final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -30,16 +41,24 @@ class Applys with ChangeNotifier {
       loadedApplys.add(
         ApplyItem(
           id: applyId,
-          amount: applyData['amount'],
           dateTime: DateTime.parse(applyData['dateTime']),
-          jobs: (applyData['jobs'] as List<dynamic>)
+          job: (applyData['job'] as List<dynamic>)
               .map(
-                (item) => CartItem(
-                  id: item['id'],
-                  price: item['price'],
-                  quantity: item['quantity'],
-                  title: item['title'],
-                ),
+                (item) => Job(
+                      id: item['id'],
+                      title: item['title'],
+                      type: item['type'],
+                      workingday: item['workingday'],
+                      workinghour: item['workinghour'],
+                      salary: item['salary'],
+                      description: item['description'],
+                      location: item['location'],
+                      industry: item['industry'],
+                      skill: item['skill'],
+                      education: item['education'],
+                      gender: item['gender'],
+                      typeSalary: item['typeSalary'],
+                    ),
               )
               .toList(),
         ),
@@ -49,21 +68,18 @@ class Applys with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> addApply(List<CartItem> cartJobs, double total) async {
-    final url =
-        'https://dreamjob-id.firebaseio.com/applys/$userId.json?auth=$authToken';
+  Future<void> addApply(List<Job> addJobs) async {
+    final url = 'https://dreamjob-id.firebaseio.com/applys/$userId.json?auth=$authToken';
     final timestamp = DateTime.now();
     final response = await http.post(
       url,
       body: json.encode({
-        'amount': total,
         'dateTime': timestamp.toIso8601String(),
-        'jobs': cartJobs
+        'jobs': addJobs
             .map((cp) => {
                   'id': cp.id,
                   'title': cp.title,
-                  'quantity': cp.quantity,
-                  'price': cp.price,
+                  'salary': cp.salary,
                 })
             .toList(),
       }),
@@ -72,9 +88,8 @@ class Applys with ChangeNotifier {
       0,
       ApplyItem(
         id: json.decode(response.body)['name'],
-        amount: total,
         dateTime: timestamp,
-        jobs: cartJobs,
+        job: addJobs,
       ),
     );
     notifyListeners();
