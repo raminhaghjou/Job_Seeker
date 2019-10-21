@@ -47,34 +47,34 @@ class _EditPostState extends State<EditPost> {
     'typeSalary': '',
     'gender': '',
   };
-  var _isInit = true;
+  // var _isInit = true;
   var _isLoading = false;
 
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      final jobId = ModalRoute.of(context).settings.arguments as String;
-      if (jobId != null) {
-        _editJob = Provider.of<Jobs>(context, listen: false).findById(jobId);
-        _initValues = {
-          'title': _editJob.title,
-          'location': _editJob.location,
-          'description': _editJob.description,
-          'workingday': _editJob.workingday,
-          'workinghour': _editJob.workinghour,
-          'skill': _editJob.skill,
-          'salary': _editJob.salary.toString(),
-          'type': _editJob.type,
-          'education': _editJob.education,
-          'industry': _editJob.industry,
-          'typeSalary': _editJob.typeSalary,
-          'gender': _editJob.gender.toString(),
-        };
-      }
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
+  // @override
+  // void didChangeDependencies() {
+  //   if (_isInit) {
+  //     final jobId = ModalRoute.of(context).settings.arguments as String;
+  //     if (jobId != null) {
+  //       _editJob = Provider.of<Jobs>(context, listen: false).findById(jobId);
+  //       _initValues = {
+  //         'title': _editJob.title,
+  //         'location': _editJob.location,
+  //         'description': _editJob.description,
+  //         'workingday': _editJob.workingday,
+  //         'workinghour': _editJob.workinghour,
+  //         'skill': _editJob.skill,
+  //         'salary': _editJob.salary.toString(),
+  //         'type': _editJob.type,
+  //         'education': _editJob.education,
+  //         'industry': _editJob.industry,
+  //         'typeSalary': _editJob.typeSalary,
+  //         'gender': _editJob.gender.toString(),
+  //       };
+  //     }
+  //   }
+  //   _isInit = false;
+  //   super.didChangeDependencies();
+  // }
 
   @override
   void dispose() {
@@ -87,54 +87,54 @@ class _EditPostState extends State<EditPost> {
     super.dispose();
   }
 
-  Future<void> _saveForm() async {
-    final isValid = _form.currentState.validate();
-    if (!isValid) {
-      return;
-    }
-    _form.currentState.save();
-    setState(() {
-      _isLoading = true;
-    });
-    if (_editJob.id != null) {
-      await Provider.of<Jobs>(context, listen: false)
-          .updateJob(_editJob.id, _editJob);
-    } else {
-      try {
-        await Provider.of<Jobs>(context, listen: false).addJob(_editJob);
-      } catch (error) {
-        print(error);
-      }
-      {
-        await showDialog(
-          context: context,
-          builder: (ctx) => AlertDialog(
-            title: Text('An error occurred!'),
-            content: Text('Something went wrong.'),
-            actions: <Widget>[
-              FlatButton(
-                child: Text('Ok'),
-                onPressed: () {
-                  Navigator.of(ctx).pop();
-                },
-              )
-            ],
-          ),
-        );
-      }
+  // Future<void> _saveForm() async {
+  //   final isValid = _form.currentState.validate();
+  //   if (!isValid) {
+  //     return;
+  //   }
+  //   _form.currentState.save();
+  //   setState(() {
+  //     _isLoading = true;
+  //   });
+  //   if (_editJob.id != null) {
+  //     await Provider.of<Jobs>(context, listen: false)
+  //         .updateJob(_editJob.id, _editJob);
+  //   } else {
+  //     try {
+  //       await Provider.of<Jobs>(context, listen: false).addJob(_editJob);
+  //     } catch (error) {
+  //       print(error);
+  //     }
+  //     {
+  //       await showDialog(
+  //         context: context,
+  //         builder: (ctx) => AlertDialog(
+  //           title: Text('An error occurred!'),
+  //           content: Text('Something went wrong.'),
+  //           actions: <Widget>[
+  //             FlatButton(
+  //               child: Text('Ok'),
+  //               onPressed: () {
+  //                 Navigator.of(ctx).pop();
+  //               },
+  //             )
+  //           ],
+  //         ),
+  //       );
+  //     }
       // finally {
       //   setState(() {
       //     _isLoading = false;
       //   });
       //   Navigator.of(context).pop();
       // }
-    }
-    setState(() {
-      _isLoading = false;
-    });
-    Navigator.of(context).pop();
+    // }
+    // setState(() {
+    //   _isLoading = false;
+    // });
     // Navigator.of(context).pop();
-  }
+    // Navigator.of(context).pop();
+  // }
 
   String gender;
   String industry;
@@ -145,23 +145,6 @@ class _EditPostState extends State<EditPost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context, true);
-            },
-            icon: Icon(Icons.chevron_left, color: Color(0xff2c4057), size: 16)),
-        elevation: 1,
-        backgroundColor: Colors.white,
-        title: Text('Post Job',
-            style: TextStyle(
-              color: Color(0xff2c4057),
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              letterSpacing: 1,
-            )),
-      ),
       body: _isLoading
           ? Center(
               child: CircularProgressIndicator(),
@@ -169,7 +152,7 @@ class _EditPostState extends State<EditPost> {
           : Form(
               key: _form,
               child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(vertical: 30),
+                padding: EdgeInsets.symmetric(vertical: 50,),
                 child: Column(
                   children: <Widget>[
                     Column(
@@ -1113,27 +1096,19 @@ class _EditPostState extends State<EditPost> {
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Color(0xff22c0e8),
                         child: MaterialButton(
+                          onPressed: (){},
                           padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
-                          onPressed: _saveForm,
+                          // onPressed: _saveForm,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Text('Save Post',
-                                  textAlign: TextAlign.center,
+                              Text('Post',
                                   style: TextStyle(
                                     fontFamily: 'VarelaRound',
                                     color: Color(0xffffffff),
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                   )),
-                              Container(
-                                padding: EdgeInsets.only(left: 40, right: 30),
-                                child: Icon(
-                                  Icons.arrow_forward,
-                                  color: Colors.white,
-                                  size: 20,
-                                ),
-                              ),
                             ],
                           ),
                         ),

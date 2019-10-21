@@ -166,16 +166,15 @@ class _PaymentMethodState extends State<PaymentMethod> with SingleTickerProvider
                           Text('SAVE CARD', style: style.copyWith(fontSize: 12, fontWeight: FontWeight.bold)),  
                           ],),  
                           
-                          Padding(
-                            padding: const EdgeInsets.only(right: 155),
+                          Container(
+                            width: 100,
                             child: RaisedButton(
                               shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
                               color: Color(0xff22c0e8),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                 Text('ADD CARD', style: style.copyWith(fontSize: 12, color: Colors.white)),
-                                Icon(Icons.arrow_forward, size: 18, color: Colors.white)
                               ],),
                               onPressed: () {
                                 if (_formKey.currentState.validate()) {
@@ -231,134 +230,137 @@ class _PaymentMethodState extends State<PaymentMethod> with SingleTickerProvider
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-              content: Form(
-                      key: _formKey,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Text('Add GoPay', style: style.copyWith(fontSize: 14, fontWeight: FontWeight.bold)),
-                          Text('Phone Number', style: style.copyWith(fontSize: 11, fontWeight: FontWeight.bold, height: 2)),
-                          Row(
-                            children: <Widget>[
-                           Flexible(
-                          child: Container(
-                             width: 40,
-                             margin: EdgeInsets.only(top: 5, right: 10),                        
-                           child: TextField(        
-                             style: style.copyWith(fontSize: 16, color: Color(0xff8997a7)),          
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                borderSide: BorderSide(color: Colors.transparent, width: 1),
+              content: ListView(children: <Widget>[
+                Form(
+                        key: _formKey,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Text('Add GoPay', style: style.copyWith(fontSize: 14, fontWeight: FontWeight.bold)),
+                            Text('Phone Number', style: style.copyWith(fontSize: 11, fontWeight: FontWeight.bold, height: 2)),
+                            Row(
+                              children: <Widget>[
+                             Flexible(
+                            child: Container(
+                               width: 40,
+                               margin: EdgeInsets.only(top: 5, right: 10),                        
+                             child: TextField(        
+                               style: style.copyWith(fontSize: 16, color: Color(0xff8997a7)),          
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.all(10),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  borderSide: BorderSide(color: Colors.transparent, width: 1),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xff22c0e8), width: 1),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                fillColor: Color(0xffdcdfe3),
+                                filled: true,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Color(0xff22c0e8), width: 1),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              fillColor: Color(0xffdcdfe3),
-                              filled: true,
+                            ), 
                             ),
-                          ), 
-                          ),
-                           ),
-                               
-                                   Flexible(
-                                   child: Container(
-                             margin: EdgeInsets.only(top: 5),                        
-                           child: TextField(       
-                             style: style.copyWith(fontSize: 16, color: Color(0xff8997a7)),         
-                            decoration: InputDecoration(
-                              focusColor: Colors.yellow,
-                              contentPadding: EdgeInsets.all(10),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                borderSide: BorderSide(color: Colors.transparent, width: 1),
+                             ),
+                                 
+                                     Flexible(
+                                     child: Container(
+                               margin: EdgeInsets.only(top: 5),                        
+                             child: TextField(       
+                               style: style.copyWith(fontSize: 16, color: Color(0xff8997a7)),         
+                              decoration: InputDecoration(
+                                focusColor: Colors.yellow,
+                                contentPadding: EdgeInsets.all(10),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  borderSide: BorderSide(color: Colors.transparent, width: 1),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xff22c0e8), width: 1),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                fillColor: Color(0xffdcdfe3),
+                                filled: true,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Color(0xff22c0e8), width: 1),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              fillColor: Color(0xffdcdfe3),
-                              filled: true,
+                            ), 
                             ),
-                          ), 
-                          ),
-                          ),
-                              ],),  
-                          
+                            ),
+                                ],),  
+                            
  
-                        
-                          Row(children: <Widget>[
-                          Flexible(
-                          child: Container(
-                            padding: EdgeInsets.only(top: 30, bottom: 10, right: 10),  
-                            child: RaisedButton(
-                              shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                              color: Color(0xff22c0e8),
-                              onPressed: () {
-                                if (_formKey.currentState.validate()) {
-                                  _formKey.currentState.save();
-                                }
-                              },
-                                child: Text('SEND OTP', style: style.copyWith(fontSize: 10, color: Colors.white)),
-                            ),
-                          )
-                          ),
-                          Flexible(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                           Text('OTP', style: style.copyWith(fontSize: 11, fontWeight: FontWeight.bold, height: 2)), 
-                           Container(
-                             margin: EdgeInsets.only(right: 30),                        
-                           child: TextField(       
-                             style: style.copyWith(fontSize: 16, color: Color(0xff8997a7)),         
-                            decoration: InputDecoration(
-                              focusColor: Colors.yellow,
-                              contentPadding: EdgeInsets.all(10),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                borderSide: BorderSide(color: Colors.transparent, width: 1),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Color(0xff22c0e8), width: 1),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              fillColor: Color(0xffdcdfe3),
-                              filled: true,
-                            ),
-                          ), 
-                          ),
-                          ],),  
-                          ),  
-                          ],),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                            Text('By continuing, you agree to :', style: style.copyWith(fontSize: 14, fontWeight: FontWeight.bold)),
-                            Text('- Dreamjob Terms of Service', style: style.copyWith(fontSize: 14, fontWeight: FontWeight.bold)),
-                            Text('- GoPay Terms of Service', style: style.copyWith(fontSize: 14, fontWeight: FontWeight.bold, height: 2)),
-                          ],),
                           
-                          Container(
-                            width: 400,
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: RaisedButton(
-                              shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                              color: Color(0xff22c0e8),
-                              onPressed: () {
-                                if (_formKey.currentState.validate()) {
-                                  _formKey.currentState.save();
-                                }
-                              },
-                                child: Text('Continue', style: style.copyWith(fontSize: 12, color: Colors.white)),                             
+                            Row(children: <Widget>[
+                            Flexible(
+                            child: Container(
+                              padding: EdgeInsets.only(top: 30, bottom: 10, right: 10),  
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+                                color: Color(0xff22c0e8),
+                                onPressed: () {
+                                  if (_formKey.currentState.validate()) {
+                                    _formKey.currentState.save();
+                                  }
+                                },
+                                  child: Text('SEND OTP', style: style.copyWith(fontSize: 10, color: Colors.white)),
+                              ),
+                            )
                             ),
-                          )
-                        ],
-                      ),
-                      ),
+                            Flexible(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                             Text('OTP', style: style.copyWith(fontSize: 11, fontWeight: FontWeight.bold, height: 2)), 
+                             Container(
+                               margin: EdgeInsets.only(right: 30),                        
+                             child: TextField(       
+                               style: style.copyWith(fontSize: 16, color: Color(0xff8997a7)),         
+                              decoration: InputDecoration(
+                                focusColor: Colors.yellow,
+                                contentPadding: EdgeInsets.all(10),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  borderSide: BorderSide(color: Colors.transparent, width: 1),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xff22c0e8), width: 1),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                fillColor: Color(0xffdcdfe3),
+                                filled: true,
+                              ),
+                            ), 
+                            ),
+                            ],),  
+                            ),  
+                            ],),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                              Text('By continuing, you agree to :', style: style.copyWith(fontSize: 14, fontWeight: FontWeight.bold)),
+                              Text('- Dreamjob Terms of Service', style: style.copyWith(fontSize: 14, fontWeight: FontWeight.bold)),
+                              Text('- GoPay Terms of Service', style: style.copyWith(fontSize: 14, fontWeight: FontWeight.bold, height: 2)),
+                            ],),
+                            
+                            Container(
+                              width: 400,
+                              padding: EdgeInsets.symmetric(horizontal: 10),
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+                                color: Color(0xff22c0e8),
+                                onPressed: () {
+                                  if (_formKey.currentState.validate()) {
+                                    _formKey.currentState.save();
+                                  }
+                                },
+                                  child: Text('Continue', style: style.copyWith(fontSize: 12, color: Colors.white)),                             
+                              ),
+                            )
+                          ],
+                        ),
+                        ),
+              ],
+              ),
                     
                   );
                 });

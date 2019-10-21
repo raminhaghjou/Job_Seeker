@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
 import 'package:space/src/core/models/apply.dart';
@@ -15,21 +16,7 @@ class JobDetails extends StatefulWidget {
 
 class _JobDetailsState extends State<JobDetails> {
   var _isLoading = false;
-  var _editJob = Job(
-    id: null,
-    title: '',
-    salary: 0,
-    description: '',
-    type: '',
-    workingday: '',
-    workinghour: '',
-    skill: '',
-    education: '',
-    industry: '',
-    location: '',
-    typeSalary: '',
-    gender: '',
-  );
+  var _editJob = List<Job>();
 // final bool showSaves;
 
 // JobDetails(this.showSaves);
@@ -45,34 +32,34 @@ class _JobDetailsState extends State<JobDetails> {
       context,
       listen: false,
     ).findById(jobId);
-    return Stack(
-      children: <Widget>[
-        //  Container(
-        //     child: Image.asset('assets/ketapang.png', fit: BoxFit.cover),
-        //   ),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            automaticallyImplyLeading: true,
-            leading: IconButton(
-                onPressed: () {
-                  Navigator.pop(context, true);
-                },
-                icon: Icon(FeatherIcons.chevronLeft,
-                    color: Colors.white, size: 16)),
-            elevation: 1,
-            backgroundColor: Colors.transparent,
-            title: Text('loadedJob.employerName',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 1,
-                )),
+    return Material(
+      color: Colors.white,
+      child: Stack(
+        children: <Widget>[
+          Container(
+            child: Image.asset('assets/ketapang.png', fit: BoxFit.cover),
           ),
-          body: SingleChildScrollView(
-            child: Container(
-              height: MediaQuery.of(context).size.height,
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              automaticallyImplyLeading: true,
+              leading: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                  },
+                  icon: Icon(FeatherIcons.chevronLeft,
+                      color: Colors.white, size: 16)),
+              elevation: 1,
+              backgroundColor: Colors.transparent,
+              title: Text(loadedJob.employerName,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 1,
+                  )),
+            ),
+            body: Container(
               child: Stack(
                 children: <Widget>[
                   Container(
@@ -168,12 +155,15 @@ class _JobDetailsState extends State<JobDetails> {
                       top: 50,
                       left: 30,
                     ),
-                    child: ClipOval(
-                        // child: Image.network(loadedJob.imageUrl, height: 80),
-                        ),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 40,
+                      child: ClipOval(
+                        child: Image.network(loadedJob.imageUrl, height: 80),
+                      ),
+                    ),
                   ),
                   Container(
-                      height: MediaQuery.of(context).size.height,
                       margin: EdgeInsets.only(top: 190),
                       padding: EdgeInsets.only(top: 10, left: 20, right: 20),
                       decoration: BoxDecoration(
@@ -181,8 +171,7 @@ class _JobDetailsState extends State<JobDetails> {
                           borderRadius: BorderRadius.only(
                               topLeft: const Radius.circular(40.0),
                               topRight: const Radius.circular(40.0))),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: ListView(
                         children: <Widget>[
                           RichText(
                             text: TextSpan(
@@ -257,29 +246,32 @@ class _JobDetailsState extends State<JobDetails> {
                           SizedBox(
                             height: 15,
                           ),
-                          Center(
-                            child: RaisedButton(
-                              child: _isLoading
-                                  ? CircularProgressIndicator()
-                                  : Text('Apply for a job',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15)),
-                              color: Color(0xff22c0e8),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)),
-                              // onPressed: (_isLoading)
-                              //     ? null
-                              //     : () async {
-                              //         setState(() {
-                              //           _isLoading = true;
-                              //         });
-                              //         await Provider.of<Applys>(context,
-                              //                 listen: false)
-                              //             .addApply(_editJob);
-                              //         setState(() {
-                              //           _isLoading = false;
-                              //         });
-                              //       },
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 20),
+                            child: Center(
+                              child: RaisedButton(
+                                child: _isLoading
+                                    ? CircularProgressIndicator()
+                                    : Text('Apply for a job',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 15)),
+                                color: Color(0xff22c0e8),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)),
+                                onPressed: (_isLoading)
+                                    ? null
+                                    : () async {
+                                        setState(() {
+                                          _isLoading = true;
+                                        });
+                                        await Provider.of<Applys>(context,
+                                                listen: false)
+                                            .addApply(_editJob);
+                                        setState(() {
+                                          _isLoading = false;
+                                        });
+                                      },
+                              ),
                             ),
                           ),
                         ],
@@ -287,29 +279,22 @@ class _JobDetailsState extends State<JobDetails> {
                 ],
               ),
             ),
+            floatingActionButton: FloatingActionButton(
+              child: Icon(MdiIcons.bookmarkOutline,
+                color: Colors.white),
+              onPressed: () {
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    duration: Duration(seconds: 1),
+                    content:
+                        Text('Save', style: TextStyle(color: Colors.white)),
+                  ),
+                );
+              },
+            ),
           ),
-          // floatingActionButton: Consumer<Job>(
-          //           builder: (ctx, job, _) =>
-          //           FloatingActionButton(
-          //           child: Icon(
-          //             job.isSave ? MdiIcons.bookmark : MdiIcons.bookmarkOutline,
-          //             color: Theme.of(context).colorScheme.secondary),
-          //             onPressed: () {
-          //                   job.toggleSavePosts(
-          //                     authData.token,
-          //                     authData.userId,
-          //                   );
-          //             Scaffold.of(context).showSnackBar(
-          //               SnackBar(
-          //                 duration: Duration(seconds: 1),
-          //                 content: Text('Save', style: TextStyle(color:Colors.white)),
-          //               ),
-          //             );
-          //           },
-          //       ),
-          //     ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

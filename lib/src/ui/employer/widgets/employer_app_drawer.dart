@@ -32,15 +32,15 @@ class EmployerDrawer extends StatelessWidget {
                   children: [
                     Text('Mekuru Ramen',
                         style:
-                            TextStyle(fontSize: 16, color: Color(0xff3b3b3b))),
+                            TextStyle(fontSize: 18, color: Colors.black, height: 2)),
                     Text('View and Edit Profile',
                         style:
-                            TextStyle(fontSize: 11, color: Color(0xff3b3b3b))),
+                            TextStyle(fontSize: 10, color: Colors.black)),
                   ],
                 ),
                 trailing: CircleAvatar(
                   backgroundColor: Colors.white,
-                  radius: 40.0,
+                  radius: 30.0,
                   child: Image.asset(
                     'assets/mekuru.png',
                     height: 75,
@@ -61,7 +61,7 @@ class EmployerDrawer extends StatelessWidget {
                     style: TextStyle(
                         color: Color(0xff757575), fontSize: 12, height: 0.5)),
                 trailing: Padding(
-                    padding: EdgeInsets.only(bottom: 5),
+                    padding: EdgeInsets.only(bottom: 5, right: 5),
                     child: Icon(MdiIcons.bellOutline,
                         color: Color(0xff4d4d4d), size: 18)),
                 onTap: () {
@@ -82,7 +82,7 @@ class EmployerDrawer extends StatelessWidget {
                   title: Text('Profile Setting',
                       style: TextStyle(color: Color(0xff757575), fontSize: 12)),
                   trailing: Padding(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.only(bottom: 5, right: 5),
                       child: Icon(MdiIcons.accountEditOutline,
                           color: Color(0xff4d4d4d), size: 18)),
                   onTap: () {
@@ -103,7 +103,7 @@ class EmployerDrawer extends StatelessWidget {
                   title: Text('Settings',
                       style: TextStyle(color: Color(0xff757575), fontSize: 12)),
                   trailing: Padding(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.only(bottom: 5, right: 5),
                       child: Icon(MdiIcons.settingsOutline,
                           color: Color(0xff4d4d4d), size: 18)),
                   onTap: () {
@@ -124,7 +124,7 @@ class EmployerDrawer extends StatelessWidget {
                   title: Text('Help?',
                       style: TextStyle(color: Color(0xff757575), fontSize: 12)),
                   trailing: Padding(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.only(bottom: 5, right: 5),
                       child: Icon(MdiIcons.accountQuestionOutline,
                           color: Color(0xff4d4d4d), size: 18)),
                   onTap: () {
@@ -144,7 +144,7 @@ class EmployerDrawer extends StatelessWidget {
                   title: Text('Feedback Us',
                       style: TextStyle(color: Color(0xff757575), fontSize: 12)),
                   trailing: Padding(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.only(bottom: 5, right: 5),
                       child: Icon(MdiIcons.sendCircleOutline,
                           color: Color(0xff4d4d4d), size: 20)),
                   onTap: () {
@@ -164,7 +164,7 @@ class EmployerDrawer extends StatelessWidget {
                   title: Text('Invite Friends',
                       style: TextStyle(color: Color(0xff757575), fontSize: 12)),
                   trailing: Padding(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.only(bottom: 5, right: 5),
                       child: Icon(MdiIcons.accountMultiplePlusOutline,
                           color: Color(0xff4d4d4d), size: 18)),
                   onTap: () {
@@ -185,7 +185,7 @@ class EmployerDrawer extends StatelessWidget {
                   title: Text('FAQ',
                       style: TextStyle(color: Color(0xff757575), fontSize: 12)),
                   trailing: Padding(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.only(bottom: 5, right: 5),
                       child: Icon(MdiIcons.helpCircleOutline,
                           color: Color(0xff4d4d4d), size: 18)),
                   onTap: () {
@@ -205,7 +205,7 @@ class EmployerDrawer extends StatelessWidget {
                   title: Text('Abous Us',
                       style: TextStyle(color: Color(0xff757575), fontSize: 12)),
                   trailing: Padding(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.only(bottom: 5, right: 5),
                       child: Icon(MdiIcons.accountGroupOutline,
                           color: Color(0xff4d4d4d), size: 18)),
                   onTap: () {
@@ -225,7 +225,7 @@ class EmployerDrawer extends StatelessWidget {
                   title: Text('Log Out',
                       style: TextStyle(color: Color(0xff757575), fontSize: 12)),
                   trailing: Padding(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.only(bottom: 5, right: 5),
                       child: Icon(MdiIcons.logoutVariant,
                           color: Color(0xff4d4d4d), size: 18)),
                   onTap: () {

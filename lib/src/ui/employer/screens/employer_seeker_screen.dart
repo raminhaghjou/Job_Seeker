@@ -47,22 +47,10 @@ class _EmployerSeekerListState extends State<EmployerSeekerList> {
                   ListTile(
                     leading: Column(
                       children: <Widget>[
-                        Stack(
-                          alignment: Alignment(1, -1),
-                          children: [
-                            CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/img_profil.png'),
-                              backgroundColor: Colors.blue,
-                              radius: 28,
-                            ),
-                            Material(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Color(0xff22c0e8),
-                              child: Icon(FeatherIcons.plus,
-                                  color: Colors.white, size: 14),
-                            ),
-                          ],
+                        CircleAvatar(
+                          backgroundImage: AssetImage('assets/img_profil.png'),
+                          backgroundColor: Colors.blue,
+                          radius: 28,
                         ),
                       ],
                     ),

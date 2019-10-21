@@ -5,13 +5,14 @@ import 'package:provider/provider.dart';
 import 'package:space/src/core/models/job.dart';
 import 'package:space/src/ui/seeker/layout/job_details.dart';
 
-class RecommendedJob extends StatelessWidget {
+class RecentJob extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final job = Provider.of<Job>(context, listen: false);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Card(
+        elevation: 3,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: ListTile(
           onTap: () {
@@ -20,7 +21,7 @@ class RecommendedJob extends StatelessWidget {
           },
           leading: SizedBox(
             height: 40,
-            // child: Image.network(job.imageUrl, fit: BoxFit.cover),
+            child: Image.network(job.imageUrl, fit: BoxFit.cover),
           ),
           title: Container(
             padding: EdgeInsets.only(bottom: 10),

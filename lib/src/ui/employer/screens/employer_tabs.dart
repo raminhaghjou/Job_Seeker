@@ -20,7 +20,7 @@ class EmployerTabs extends StatelessWidget {
             body: TabBarView(
               children: <Widget>[
                 EmployerSeekerList(),
-                JobsListScreen(),
+                EmployerSeekerList(),
                 EmployerPostScreen(),
               ],
             )),

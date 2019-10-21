@@ -4,31 +4,31 @@ import 'package:provider/provider.dart';
 import 'package:space/src/core/models/jobs.dart';
 import 'package:space/src/ui/components/recommended_job.dart';
 
-class RecommendedScreen extends StatefulWidget {
+class RecentScreen extends StatefulWidget {
 
-  _RecommendedScreenState createState() => _RecommendedScreenState();
+  _RecentScreenState createState() => _RecentScreenState();
 }
 
-class _RecommendedScreenState extends State<RecommendedScreen> {
-  var _isInit = true;
+class _RecentScreenState extends State<RecentScreen> {
+  // var _isInit = true;
   var _isLoading = false;
 
 
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<Jobs>(context).fetchAndSetJobs().then((_) {
-        setState(() {
-          _isLoading = false;
-        });
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
+  // @override
+  // void didChangeDependencies() {
+  //   if (_isInit) {
+  //     setState(() {
+  //       _isLoading = true;
+  //     });
+  //     Provider.of<Jobs>(context).fetchAndSetJobs().then((_) {
+  //       setState(() {
+  //         _isLoading = false;
+  //       });
+  //     });
+  //   }
+  //   _isInit = false;
+  //   super.didChangeDependencies();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _RecommendedScreenState extends State<RecommendedScreen> {
       itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
             // builder: (c) => jobs[i],
             value: jobs[i],
-            child: RecommendedJob(
+            child: RecentJob(
                 // jobs[i].id,
                 // jobs[i].title,
                 // jobs[i].imageUrl,

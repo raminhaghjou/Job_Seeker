@@ -1,31 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:space/src/ui/settings/setting_payment_method.dart';
-
-void main() {
-  runApp(MaterialApp(
-    title: 'Named Routes Demo',
-    initialRoute: '/',
-    routes: {
-      '/': (context) => SettingUIPayment(),
-      'space/setting_payment_method': (context) => PaymentMethod(),
-    },
-  ));
-}
-
-
-class MyApp extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Slidable Demo',
-      home: SettingUIPayment(title: 'Flutter Slidable Demo'),
-    );
-  }
-}
-
-
 class SettingUIPayment extends StatefulWidget {
   const SettingUIPayment({ Key key, String title }) : super(key: key);
   @override

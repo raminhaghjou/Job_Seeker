@@ -102,58 +102,24 @@ class EmployerPost extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                IconButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushNamed(EditPost.routeName, arguments: id);
-                  },
-                  icon: Icon(Icons.edit),
-                ),
-                IconButton(
-                  icon: Icon(Icons.delete),
-                  onPressed: () async {
-                    try {
-                      await Provider.of<Jobs>(context, listen: false)
-                          .deleteJob(id);
-                    } catch (error) {
-                      scaffold.showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            'Deleting failed!',
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      );
-                    }
-                  },
-                  color: Theme.of(context).errorColor,
-                ),
+               PopupMenuButton(
+                 icon: Icon(
+              Icons.more_vert,
+              size: 22,
+            ),
+            itemBuilder: (_) => [
+                  PopupMenuItem(
+                    child: Text('Edit'),
+                  ),
+                  PopupMenuItem(
+                    child: Text('Delete'),
+                  ),
+                ],
+        
+               )
               ],
             ),
-// PopupMenuButton(
-//             onSelected: (PostOptions selectedValue) {
-//               setState(() {
-//                 if (selectedValue == PostOptions.Edit) {
-//                   _showOnlyFavorites = true;
-//                 } else {
-//                   _showOnlyFavorites = false;
-//                 }
-//               });
-//             },
-//             icon: Icon(
-//               Icons.more_vert,
-//             ),
-//             itemBuilder: (_) => [
-//                   PopupMenuItem(
-//                     child: Text('Edit'),
-//                     value: PostOptions.Edit,
-//                   ),
-//                   PopupMenuItem(
-//                     child: Text('Delete'),
-//                     value: PostOptions.Delete,
-//                   ),
-//                 ],
-//           ),
+
           ),
         ],
       ),

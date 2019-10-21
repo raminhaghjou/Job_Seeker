@@ -4,29 +4,29 @@ import 'package:provider/provider.dart';
 import 'package:space/src/core/models/jobs.dart';
 import 'package:space/src/ui/components/horizontal_list.dart';
 
-class HorizontalScreen extends StatefulWidget {
-  _HorizontalScreenState createState() => _HorizontalScreenState();
+class RecommendedScreen extends StatefulWidget {
+  _RecommendedScreenState createState() => _RecommendedScreenState();
 }
 
-class _HorizontalScreenState extends State<HorizontalScreen> {
-  var _isInit = true;
+class _RecommendedScreenState extends State<RecommendedScreen> {
+  // var _isInit = true;
   var _isLoading = false;
 
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<Jobs>(context).fetchAndSetJobs().then((_) {
-        setState(() {
-          _isLoading = false;
-        });
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
+  // @override
+  // void didChangeDependencies() {
+  //   if (_isInit) {
+  //     setState(() {
+  //       _isLoading = true;
+  //     });
+  //     Provider.of<Jobs>(context).fetchAndSetJobs().then((_) {
+  //       setState(() {
+  //         _isLoading = false;
+  //       });
+  //     });
+  //   }
+  //   _isInit = false;
+  //   super.didChangeDependencies();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _HorizontalScreenState extends State<HorizontalScreen> {
               itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
                 // builder: (c) => jobs[i],
                 value: jobs[i],
-                child: HorizontalList(
+                child: RecommendedJob(
                     // jobs[i].id,
                     // jobs[i].title,
                     // jobs[i].imageUrl,

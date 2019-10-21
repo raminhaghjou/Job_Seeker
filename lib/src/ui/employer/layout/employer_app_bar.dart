@@ -20,7 +20,7 @@ class EmployerAppBar extends StatelessWidget {
       centerTitle: true,
       title: SizedBox(
         child: Image.asset('assets/logo_vertical.png'),
-        height: 30,
+        height: 60,
       ),
       actions: [
         IconButton(

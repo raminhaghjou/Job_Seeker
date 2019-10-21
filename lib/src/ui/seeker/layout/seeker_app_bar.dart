@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:space/src/core/models/cart.dart';
+import 'package:space/src/ui/seeker/layout/cv.dart';
 import 'package:space/src/ui/seeker/screens/cart_screen.dart';
-
-import 'badge.dart';
-
 
 class SeekerAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      iconTheme: IconThemeData(color: Color(0xff3b3b3b)),
       floating: true,
       pinned: true,
       snap: true,
@@ -17,34 +17,31 @@ class SeekerAppBar extends StatelessWidget {
       centerTitle: true,
       title: SizedBox(
         child: Image.asset('assets/logo_vertical.png'),
-        height: 30,
+        height: 60,
       ),
       actions: <Widget>[
-        Consumer<Cart>(
-            builder: (_, cart, ch) => Badge(
-                  child: ch,
-                  value: cart.itemCount.toString(),
-                ),
-            child: IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-              ),
-              onPressed: () {
-                Navigator.of(context).pushNamed(CartScreen.routeName);
-              },
-            ),
-          ),
+        IconButton(
+          icon: Icon(MdiIcons.accountDetails),
+          iconSize: 28,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CVSeeker()),
+            );
+          },
+        )
       ],
       bottom: TabBar(
+        unselectedLabelColor: Color(0xff3b3b3b),
         indicatorColor: Colors.yellow[700],
         labelColor: Colors.yellow[700],
         labelStyle: TextStyle(fontSize: 14, color: Colors.yellow[700]),
         unselectedLabelStyle: TextStyle(color: Color(0xff000000)),
         tabs: <Widget>[
-            Tab(text: 'New'),  
-            Tab(text: 'Applied'),
-            Tab(text: 'Saved'),
-          ],
+          Tab(text: 'New'),
+          Tab(text: 'Applied'),
+          Tab(text: 'Saved'),
+        ],
       ),
     );
   }

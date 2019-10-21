@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
 import 'package:space/src/core/models/job.dart';
+import 'package:space/src/core/models/save.dart';
 
 import 'package:space/src/ui/seeker/layout/job_details.dart';
 
@@ -12,7 +13,7 @@ class SavePosts extends StatelessWidget {
     return Dismissible(
       direction: DismissDirection.endToStart,
       onDismissed: (direction) {
-        // Provider.of<Save>(context, listen: false).removeItem(jobId);
+        Provider.of<Save>(context, listen: false).removeItem(job.id);
       },
       key: ValueKey(job.id),
       background: Container(
@@ -35,7 +36,7 @@ class SavePosts extends StatelessWidget {
                     alignment: Alignment(1, -1),
                     children: [
                       ClipOval(
-                          //  child: Image.network(imageUrl, fit: BoxFit.cover, height: 40)
+                           child: Image.network(job.imageUrl, fit: BoxFit.cover, height: 40)
                           ),
                       GestureDetector(
                         onTap: () {

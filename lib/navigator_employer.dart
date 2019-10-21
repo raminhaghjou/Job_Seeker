@@ -5,9 +5,12 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:space/src/ui/auth/employer/home_employer.dart';
 import 'package:space/src/ui/chat/inbox_ui_list.dart';
 import 'package:space/src/ui/components/landing_404_page.dart';
+import 'package:space/src/ui/components/notification.dart';
+import 'package:space/src/ui/employer/layout/employer_edit_post.dart';
 import 'package:space/src/ui/employer/screens/employer_tabs.dart';
 
 class EmployerNavigator extends StatefulWidget {
+  static const routeName = '/employer-navigator';
   @override
   _EmployerNavigatorState createState() => _EmployerNavigatorState();
 }
@@ -24,9 +27,9 @@ class _EmployerNavigatorState extends State<EmployerNavigator> {
   final List<Widget> _children = [
     HomePageEmployer(),
     EmployerTabs(),
-    LandingErrorPage(),
+    EditPost(),
     InboxUiList(),
-    InboxUiList(),
+    NotificationUi(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -62,8 +65,8 @@ class _EmployerNavigatorState extends State<EmployerNavigator> {
                     fontStyle: FontStyle.normal)),
           ),
           BottomNavigationBarItem(
-            icon: Icon(MdiIcons.accountSearchOutline, size: 24),
-            title: Text('SEARCH',
+            icon: Icon(MdiIcons.plusCircleOutline, size: 24),
+            title: Text('POST JOB',
                 style: TextStyle(
                     fontFamily: 'VarelaRound',
                     fontSize: 8,
@@ -90,7 +93,7 @@ class _EmployerNavigatorState extends State<EmployerNavigator> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xff4d4d4d),
+        selectedItemColor: Colors.amber,
         onTap: _onItemTapped,
       ),
     );

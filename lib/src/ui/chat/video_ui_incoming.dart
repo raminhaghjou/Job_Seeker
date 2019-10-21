@@ -1,23 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-  debugShowCheckedModeBanner: false,
-  theme: ThemeData(
-  ),
-  home: const IncomingCall(),
-);
-  }
-}
-
-
 class IncomingCall extends StatefulWidget {
   const IncomingCall({ Key key, String title }) : super(key: key);
   @override
@@ -31,7 +13,7 @@ class _IncomingCallState extends State<IncomingCall> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
 
-    return new Scaffold(
+    return  Scaffold(      
     body: Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,

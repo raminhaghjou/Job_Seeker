@@ -144,6 +144,7 @@ class _SettingSeekerProfileState extends State<SettingSeekerProfile>
                       ),
                     ),
                     Container(
+                      height: MediaQuery.of(context).size.height,
                       margin: EdgeInsets.only(top: 15),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -153,7 +154,6 @@ class _SettingSeekerProfileState extends State<SettingSeekerProfile>
                         ),
                       ),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           ListTile(

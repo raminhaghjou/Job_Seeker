@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:space/src/ui/seeker/layout/apply_post.dart';
+import 'package:space/src/ui/seeker/layout/seeker_app_bar.dart';
 
 import 'package:space/src/ui/seeker/widgets/seeker_app_drawer.dart';
-import 'package:space/src/ui/components/seeker_app_bar.dart';
 import 'package:space/src/ui/seeker/screens/applys_screen.dart';
 import 'package:space/src/ui/seeker/screens/jobs_list_screen.dart';
 import 'package:space/src/ui/seeker/screens/save_screen.dart';
@@ -27,7 +28,7 @@ class SeekerTabs extends StatelessWidget {
               //   },
               //   child:
               JobsListScreen(),
-              ApplysScreen(),
+              JobsListScreen(),
               SaveListScreen(_showSaves),
             ],
           ),

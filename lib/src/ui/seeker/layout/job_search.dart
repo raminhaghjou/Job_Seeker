@@ -8,7 +8,6 @@ class JobSearch extends StatefulWidget {
 }
 
 class _JobSearchState extends State<JobSearch> {
-  TextStyle style = TextStyle(fontFamily: 'VarelaRound', fontSize: 20.0);
   String dropdownValue = 'Rp.0 - Rp.1.000.000';
   double _sliderValue = 20.0;
   bool fulltime = false;
@@ -28,21 +27,20 @@ class _JobSearchState extends State<JobSearch> {
               minHeight: viewportConstraints.maxHeight,
             ),
             child: Container(
-              padding: EdgeInsets.only(top: 50),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Text('SEARCH FOR A JOB',
                       textAlign: TextAlign.center,
-                      style: style.copyWith(
+                      style: TextStyle(
                         color: Color(0xff2c4057),
-                        fontSize: 13,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.normal,
-                        letterSpacing: 1,
                       )),
                   Container(
-                    margin: EdgeInsets.only(top: 15, bottom: 20),
+                    margin: EdgeInsets.only(top: 15, bottom: 50),
                     width: 100,
                     color: Color(0xff22c0e8),
                     child: Divider(
@@ -51,18 +49,17 @@ class _JobSearchState extends State<JobSearch> {
                   ),
                   Container(
                     height: 180,
-                    width: 300,
+                    width: 280,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         TextField(
-                          style: style.copyWith(
-                              fontSize: 16, color: Colors.black54),
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
                           decoration: new InputDecoration(
                             contentPadding:
                                 EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                             hintText: "Keywords (e.g. Job Title...)",
-                            hintStyle: style.copyWith(fontSize: 16),
+                            hintStyle: TextStyle(fontSize: 12),
                             filled: true,
                             fillColor: Color(0xffdcdfe3),
                             enabledBorder: OutlineInputBorder(
@@ -77,13 +74,12 @@ class _JobSearchState extends State<JobSearch> {
                           ),
                         ),
                         TextField(
-                          style: style.copyWith(
-                              fontSize: 16, color: Colors.black54),
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
                           decoration: new InputDecoration(
                             contentPadding:
                                 EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                             hintText: "Location (e.g. City, Zip...)",
-                            hintStyle: style.copyWith(fontSize: 15),
+                            hintStyle: TextStyle(fontSize: 12),
                             filled: true,
                             fillColor: Color(0xffdcdfe3),
                             enabledBorder: OutlineInputBorder(
@@ -104,7 +100,7 @@ class _JobSearchState extends State<JobSearch> {
                                 contentPadding:
                                     EdgeInsets.fromLTRB(30.0, 0.0, 25.0, 0.0),
                                 errorStyle: TextStyle(
-                                    color: Colors.redAccent, fontSize: 16.0),
+                                    color: Colors.redAccent, fontSize: 12.0),
                                 filled: true,
                                 fillColor: Color(0xffdcdfe3),
                                 enabledBorder: OutlineInputBorder(
@@ -134,9 +130,9 @@ class _JobSearchState extends State<JobSearch> {
                                   return DropdownMenuItem<String>(
                                     value: value,
                                     child: new Text(value,
-                                        style: style.copyWith(
+                                        style: TextStyle(
                                           color: Colors.black54,
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontStyle: FontStyle.normal,
                                           letterSpacing: 0.25,
                                         )),
@@ -168,8 +164,8 @@ class _JobSearchState extends State<JobSearch> {
                                   },
                                 ),
                                 Text('Fulltime',
-                                    style: style.copyWith(
-                                        fontSize: 14,
+                                    style: TextStyle(
+                                        fontSize: 12,
                                         color: Color(0xff8997a7))),
                               ],
                             ),
@@ -185,8 +181,8 @@ class _JobSearchState extends State<JobSearch> {
                                   },
                                 ),
                                 Text('Partime',
-                                    style: style.copyWith(
-                                        fontSize: 14,
+                                    style: TextStyle(
+                                        fontSize: 12,
                                         color: Color(0xff8997a7))),
                               ],
                             ),
@@ -206,8 +202,8 @@ class _JobSearchState extends State<JobSearch> {
                                   },
                                 ),
                                 Text('Weekend',
-                                    style: style.copyWith(
-                                        fontSize: 14,
+                                    style: TextStyle(
+                                        fontSize: 12,
                                         color: Color(0xff8997a7))),
                               ],
                             ),
@@ -223,8 +219,8 @@ class _JobSearchState extends State<JobSearch> {
                                   },
                                 ),
                                 Text('Freelance',
-                                    style: style.copyWith(
-                                        fontSize: 14,
+                                    style: TextStyle(
+                                        fontSize: 12,
                                         color: Color(0xff8997a7))),
                               ],
                             ),
@@ -238,16 +234,16 @@ class _JobSearchState extends State<JobSearch> {
                     child: Row(
                       children: <Widget>[
                         Text('Distance',
-                            style: style.copyWith(
-                                fontSize: 14, color: Color(0xff8997a7))),
+                            style: TextStyle(
+                                fontSize: 12, color: Color(0xff8997a7))),
                         Text(' ${_sliderValue.toInt()}',
-                            style: style.copyWith(
-                                fontSize: 14,
+                            style: TextStyle(
+                                fontSize: 12,
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xff22c0e8))),
                         Text(' km',
-                            style: style.copyWith(
-                                fontSize: 14,
+                            style: TextStyle(
+                                fontSize: 12,
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xff22c0e8))),
                       ],
@@ -266,32 +262,25 @@ class _JobSearchState extends State<JobSearch> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 30, right: 30),
-                    child: Material(
-                      elevation: 3.0,
-                      borderRadius: BorderRadius.circular(30.0),
+                    child: MaterialButton(
+                      height: 45,
+                      minWidth: 280,
+                         elevation: 3.0,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                       color: Color(0xff57b22f),
-                      child: MaterialButton(
-                        padding: EdgeInsets.fromLTRB(60.0, 15.0, 20.0, 15.0),
                         onPressed: () {
                           Navigator.push(
                               context,
                               new MaterialPageRoute(
                                   builder: (context) => new JobSearchResult()));
                         },
-                        child: Row(
-                          children: <Widget>[
-                            Text('Search for a job',
-                                textAlign: TextAlign.center,
-                                style: style.copyWith(color: Colors.white)),
-                            const Expanded(
-                                child: Icon(Icons.arrow_forward,
-                                    color: Colors.white)),
-                          ],
-                        ),
+                        child: Text('Search for a job',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 16)),
                       ),
                     ),
-                  ),
+                
                 ],
               ),
             ),

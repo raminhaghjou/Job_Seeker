@@ -6,12 +6,12 @@ import 'package:space/src/core/models/job.dart';
 
 import './cart.dart';
 
-class ApplyItem {
+class ApplyPost {
   final String id;
   final List<Job> job;
   final DateTime dateTime;
 
-  ApplyItem({
+  ApplyPost({
     @required this.id,
     @required this.job,
     @required this.dateTime,
@@ -19,27 +19,27 @@ class ApplyItem {
 }
 
 class Applys with ChangeNotifier {
-  List<ApplyItem> _applys = [];
+  List<ApplyPost> _applys = [];
   final String authToken;
   final String userId;
 
   Applys(this.authToken, this.userId, this._applys);
 
-  List<ApplyItem> get applys {
+  List<ApplyPost> get applys {
     return [..._applys];
   }
 
   Future<void> fetchAndSetApplys() async {
     final url = 'https://dreamjob-id.firebaseio.com/applys/$userId.json?auth=$authToken';
     final response = await http.get(url);
-    final List<ApplyItem> loadedApplys = [];
+    final List<ApplyPost> loadedApplys = [];
     final extractedData = json.decode(response.body) as Map<String, dynamic>;
     if (extractedData == null) {
       return;
     }
     extractedData.forEach((applyId, applyData) {
       loadedApplys.add(
-        ApplyItem(
+        ApplyPost(
           id: applyId,
           dateTime: DateTime.parse(applyData['dateTime']),
           job: (applyData['job'] as List<dynamic>)
@@ -86,7 +86,7 @@ class Applys with ChangeNotifier {
     );
     _applys.insert(
       0,
-      ApplyItem(
+      ApplyPost(
         id: json.decode(response.body)['name'],
         dateTime: timestamp,
         job: addJobs,

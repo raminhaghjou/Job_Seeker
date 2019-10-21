@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
-import 'package:http/http.dart' as http;
 
 class Job with ChangeNotifier {
   final String id;
@@ -40,29 +37,8 @@ class Job with ChangeNotifier {
     this.isSave = false,
   });
 
-  void _setSaveValue(bool newValue) {
-    isSave = newValue;
-    notifyListeners();
-  }
-  
-  Future<void> toggleSavePosts(String token, String userId) async {
-    final oldStatus = isSave;
+  void toggleSavePosts() {
     isSave = !isSave;
     notifyListeners();
-    final url =
-      'https://dreamjob-id.firebaseio.com/userSaves/$userId/$id.json?auth=$token';
-    try {
-      final response = await http.put(
-        url,
-        body: json.encode(
-          isSave,
-        ),
-      );
-    if (response.statusCode >= 400) {
-      _setSaveValue(oldStatus);
-    }
-  } catch (error) {
-    _setSaveValue(oldStatus);
-  }
  }
 }

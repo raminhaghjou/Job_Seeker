@@ -8,7 +8,8 @@ class EmployerPostScreen extends StatelessWidget {
   static const routeName = '/employer-posts';
 
   Future<void> _refreshJobs(BuildContext context) async {
-    await Provider.of<Jobs>(context, listen: false).fetchAndSetJobs(true);
+    //await 
+    Provider.of<Jobs>(context, listen: false);//.fetchAndSetJobs(true);
   }
 
   @override

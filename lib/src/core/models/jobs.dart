@@ -1,25 +1,132 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:space/src/core/models/http_exception.dart';
 
-import 'package:space/src/core/models/job.dart';
-
-// const String PARSE_APP_ID = '7lbdiypJa4ZfYMky5E7NxAGFWmnfP0CtTzk6mhRj';
-// const String PARSE_APP_URL = 'https://parseapi.back4app.com/classes/job';
-// const String CLIENT_KEY = 'UH2KRTDVttLRdEB5heG70tyAdB7pcjkHgtapP4mu';
-// const String LIVE_QUERY_URL = 'wss://dreamjob.back4app.io';
+import './job.dart';
 
 class Jobs with ChangeNotifier {
- List<Job> _posts = [];
+  List<Job> _posts = [
+    Job(
+      id: 'p1',
+      title: 'Head Chef',
+      employerName: 'Mekuru Ramen',
+      description: 'Our teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and Beverages',
+      salary: 2500000,
+      type: 'Full Time',
+      gender: 'Male',
+      typeSalary: 'Per Month',
+      location: 'Pontianak, Kalimantan Barat',
+      industry: 'Food and Beverages',
+      education: 'High School',
+      workingday: 'Tuesday - Sunday',
+      workinghour: '08.00 - 21.30',
+      imageUrl:
+          'https://i.ibb.co/9NyNjxM/mekuru-2.png',
+      skill:  'required: ' 
+              '• 1+ years experience in F&B company' 
+              '• work with passion and team oriented'
+              '• Kitchen oriented.'
+              '• can work comfortably alongside both jobuction and serving teams'
+              '• a strong written and verbal communicator'
+              '• attention to food serving perfection',
+    ),
+    Job(
+      id: 'p2',
+      title: 'Assistant Chef',
+      employerName: 'Mekuru Ramen',
+      description: 'Our teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and Beverages',
+      salary: 2500000,
+      type: 'Part Time',
+      gender: 'Female',
+      typeSalary: 'Per Month',
+      location: 'Pontianak, Kalimantan Barat',
+      industry: 'Food and Beverages',
+      education: 'High School',
+      workingday: 'Tuesday - Sunday',
+      workinghour: '08.00 - 21.30',
+      imageUrl:
+          'https://i.ibb.co/9NyNjxM/mekuru-2.png',
+      skill:  'required: ' 
+              '• 1+ years experience in F&B company' 
+              '• work with passion and team oriented'
+              '• Kitchen oriented.'
+              '• can work comfortably alongside both jobuction and serving teams'
+              '• a strong written and verbal communicator'
+              '• attention to food serving perfection',
+    ),
+    Job(
+      id: 'p3',
+      title: 'Cleaning Service',
+      employerName: 'Up2u',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',      salary: 2500000,
+      type: 'Weekend',
+      gender: 'Male / Female',
+      typeSalary: 'Per Day',
+      location: 'Banjarmasin, Kalimantan Barat',
+      industry: 'Food and Beverages',
+      education: 'High School',
+      workingday: 'Sunday',
+      workinghour: '10.00 - 22.00',
+      imageUrl:
+          'https://i.ibb.co/1GcZb6v/up2u.png',
+      skill:  'required: ' 
+              '• -' 
+              '• -'
+              '• -'
+              '• -'
+              '• -'
+              '• -',
+    ),
+    Job(
+      id: 'p4',
+      title: 'CCTV Installer',
+      employerName: 'CV. CCTV Installer',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      salary: 1800000,
+      type: 'Freelance',
+      gender: 'Male / Female',
+      typeSalary: 'Per Week',
+      location: 'Singkawang, Kalimantan Barat',
+      industry: 'Technology',
+      education: 'High School',
+      workingday: 'Saturday - Sunday',
+      workinghour: '06.00 - 04.00',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2017/12/27/10/14/image-3042333_960_720.png',
+      skill:  'required: ' 
+              '• -' 
+              '• -'
+              '• -'
+              '• -'
+              '• -'
+              '• -',
+    ),
+    Job(
+      id: 'p5',
+      title: 'Mobile App Beckend',
+      employerName: 'PT. Mobile Apps',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      salary: 10000000,
+      type: 'Full Time',
+      gender: 'Male',
+      typeSalary: 'Per Month',
+      location: 'Jakarta, Jawa Timur',
+      industry: 'Human Resource',
+      education: 'S1',
+      workingday: 'Everyday',
+      workinghour: '07.00 - 17.00',
+      imageUrl:
+          'https://img.freepik.com/free-vector/professional-programmer-engineer-writing-code_3446-693.jpg?size=338&ext=jpg',
+      skill:  'required: ' 
+              '• -' 
+              '• -'
+              '• -'
+              '• -'
+              '• -'
+              '• -',
+    ),
+  ];
+  // var _showFavoritesOnly = false;
 
-final String authToken;
-final String userId;
-
-Jobs(this.authToken, this.userId, this._posts);
-
- List<Job> get posts {
+  List<Job> get posts {
     return [..._posts];
   }
 
@@ -30,137 +137,19 @@ Jobs(this.authToken, this.userId, this._posts);
   Job findById(String id) {
     return _posts.firstWhere((job) => job.id == id);
   }
-  
-  Future<void> fetchAndSetJobs([bool filterByUser = false]) async {
-    final filterString = filterByUser ? 'orderBy"creatorId"&equalTo="$userId"' : '';
-    var url = 
-        'https://dreamjob-id.firebaseio.com/jobs.json?auth=$authToken&$filterString';
-    try {
-      final response = await http.get(url);
-      final extractedData = json.decode(response.body) as Map<String, dynamic>;
-      if (extractedData == null) {
-        return;
-      }
-      url =
-          'https://dreamjob-id.firebaseio.com/userSaves/$userId.json?auth=$authToken';
-      final saveResponse = await http.get(url);
-      final saveData = json.decode(saveResponse.body);
-      final List<Job> loadedJobs = [];
-      extractedData.forEach((jobId, jobData) {
-        loadedJobs.add(Job(
-          id: jobId,
-          title: jobData['title'],
-          industry: jobData['industry'],
-          workingday: jobData['workingday'],
-          workinghour: jobData['workinghour'],
-          gender: jobData['gender'],
-          typeSalary: jobData['typeSalary'],
-          type: jobData['type'],
-          location: jobData['location'],
-          education: jobData['education'],
-          skill: jobData['skill'],
-          description: jobData['description'],
-          salary: jobData['salary'],
-          imageUrl: jobData['imageUrl'],
-          isSave: 
-            saveData == null ? false : saveData[jobId] ?? false,
-        ));
-      });
-      _posts = loadedJobs;
-      notifyListeners();
-    } catch (error) {
-      print(error);
-      throw error;
-    }     
-  }
 
-  Future<void> addJob(Job job) async {
-    final url = 'https://dreamjob-id.firebaseio.com/jobs.json?auth=$authToken';
-    try {
-      final response = await http.post(
-        url,
-        body: json.encode({
-          'title': job.title,
-          'gender': job.gender,
-          'industry': job.industry,
-          'workingday': job.workingday,
-          'workinghour': job.workinghour,
-          'type': job.type,
-          'location': job.location,
-          'education': job.education,
-          'skill': job.skill,
-          'description': job.description,
-          'salary': job.salary,
-          // 'imageUrl': job.imageUrl,
-          'creatorId' : userId,
-        }),
-      );
-    final newJob = Job(
-      title: job.title,
-      typeSalary: job.typeSalary,
-      gender: job.gender,
-      industry: job.industry,
-      workingday: job.workingday,
-      workinghour: job.workinghour,
-      type: job.type,
-      location: job.location,
-      education: job.education,
-      skill: job.skill,
-      description: job.description,
-      salary: job.salary,
-      // imageUrl: job.imageUrl,
-      id: json.decode(response.body)['name'],
-    );
-    _posts.add(newJob);
-    _posts.insert(0, newJob);
+  // void showFavoritesOnly() {
+  //   _showFavoritesOnly = true;
+  //   notifyListeners();
+  // }
+
+  // void showAll() {
+  //   _showFavoritesOnly = false;
+  //   notifyListeners();
+  // }
+
+  void addJob() {
+    // _posts.add(value);
     notifyListeners();
-    } catch (error) {
-      print(error);
-      throw error;
-  }
-}
-
-  Future<void> updateJob(String id, Job newJob) async {
-    final jobIndex = _posts.indexWhere((job) => job.id == id);
-    if (jobIndex >= 0) {
-      final url = 
-          'https://dreamjob-id.firebaseio.com/jobs/$id.json?auth=$authToken';
-      await http.patch(url,
-          body: json.encode({
-            'title': newJob.title,
-            'typeSalary': newJob.typeSalary,
-            'gender': newJob.gender,
-            'industry': newJob.industry,
-            'workingday': newJob.workingday,
-            'workinghour': newJob.workinghour,
-            'type': newJob.type,
-            'location': newJob.location,
-            'education': newJob.education,
-            'skill': newJob.skill,
-            'description': newJob.description,
-            'salary': newJob.salary,
-            // 'imageUrl': newJob.imageUrl,
-          }));
-      _posts[jobIndex] = newJob;
-      notifyListeners();
-    } else {
-      print('...');
-    }
-  }
-
-  Future<void> deleteJob(String id) async {
-    final url = 
-        'https://dreamjob-id.firebaseio.com/jobs/$id.json?auth=$authToken';
-    final existingJobIndex = _posts.indexWhere((job) => job.id == id);
-    var existingJob = _posts[existingJobIndex];
-    _posts.removeAt(existingJobIndex);
-    notifyListeners();
-    final response = await http.delete(url);
-    if (response.statusCode >= 400) {
-      _posts.insert(existingJobIndex, existingJob);
-      notifyListeners();
-      throw HttpException('Could not delete post.');
-    }
-    existingJob = null;
   }
 }

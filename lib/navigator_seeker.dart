@@ -4,10 +4,13 @@ import 'package:flutter/services.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:space/src/ui/auth/seeker/home_seeker.dart';
 import 'package:space/src/ui/chat/inbox_ui_list.dart';
+import 'package:space/src/ui/components/notification.dart';
 import 'package:space/src/ui/seeker/layout/job_search.dart';
 import 'package:space/src/ui/seeker/screens/seeker_tabs.dart';
 
 class SeekerNavigator extends StatefulWidget {
+  static const routeName = '/seeker-navigator';
+
   @override
   _SeekerNavigatorState createState() => _SeekerNavigatorState();
 }
@@ -26,7 +29,7 @@ class _SeekerNavigatorState extends State<SeekerNavigator> {
     SeekerTabs(),
     JobSearch(),
     InboxUiList(),
-    InboxUiList(),
+    NotificationUi(),
   ];
   @override
   Widget build(BuildContext context) {
