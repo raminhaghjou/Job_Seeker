@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:international_phone_input/international_phone_input.dart';
 
 class PaymentMethod extends StatefulWidget {
@@ -92,196 +91,198 @@ class _PaymentMethodState extends State<PaymentMethod>
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            content: Form(
-                              key: _formKey,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Text('Add Card',
-                                      style: style.copyWith(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold)),
-                                  Text('Card Number',
-                                      style: style.copyWith(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.bold,
-                                          height: 2)),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 5, bottom: 20),
-                                    child: TextField(
-                                      style: style.copyWith(
-                                          fontSize: 16,
-                                          color: Color(0xff8997a7)),
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(10),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                          borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1),
+                            content: SingleChildScrollView(
+                              child: Form(
+                                key: _formKey,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Text('Add Card',
+                                        style: style.copyWith(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold)),
+                                    Text('Card Number',
+                                        style: style.copyWith(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.bold,
+                                            height: 2)),
+                                    Container(
+                                      margin: EdgeInsets.only(top: 5, bottom: 20),
+                                      child: TextField(
+                                        style: style.copyWith(
+                                            fontSize: 16,
+                                            color: Color(0xff8997a7)),
+                                        decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.all(10),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color(0xff22c0e8),
+                                                width: 1),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          fillColor: Color(0xffdcdfe3),
+                                          filled: true,
                                         ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xff22c0e8),
-                                              width: 1),
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        fillColor: Color(0xffdcdfe3),
-                                        filled: true,
                                       ),
                                     ),
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Flexible(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text('Exp Dates',
-                                                style: style.copyWith(
-                                                    fontSize: 11,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 2)),
-                                            Container(
-                                              margin: EdgeInsets.only(
-                                                  right: 30,
-                                                  top: 5,
-                                                  bottom: 10),
-                                              child: TextField(
-                                                style: style.copyWith(
-                                                    fontSize: 16,
-                                                    color: Color(0xff8997a7)),
-                                                decoration: InputDecoration(
-                                                  contentPadding:
-                                                      EdgeInsets.all(10),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                    borderSide: BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 1),
+                                    Row(
+                                      children: <Widget>[
+                                        Flexible(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Text('Exp Dates',
+                                                  style: style.copyWith(
+                                                      fontSize: 11,
+                                                      fontWeight: FontWeight.bold,
+                                                      height: 2)),
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    right: 30,
+                                                    top: 5,
+                                                    bottom: 10),
+                                                child: TextField(
+                                                  style: style.copyWith(
+                                                      fontSize: 16,
+                                                      color: Color(0xff8997a7)),
+                                                  decoration: InputDecoration(
+                                                    contentPadding:
+                                                        EdgeInsets.all(10),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                      borderSide: BorderSide(
+                                                          color:
+                                                              Colors.transparent,
+                                                          width: 1),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color:
+                                                              Color(0xff22c0e8),
+                                                          width: 1),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    fillColor: Color(0xffdcdfe3),
+                                                    filled: true,
                                                   ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color:
-                                                            Color(0xff22c0e8),
-                                                        width: 1),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  fillColor: Color(0xffdcdfe3),
-                                                  filled: true,
                                                 ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Flexible(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text('Security Code',
-                                                style: style.copyWith(
-                                                    fontSize: 11,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 2)),
-                                            Container(
-                                              margin: EdgeInsets.only(
-                                                  right: 30,
-                                                  top: 5,
-                                                  bottom: 10),
-                                              child: TextField(
-                                                style: style.copyWith(
-                                                    fontSize: 16,
-                                                    color: Color(0xff8997a7)),
-                                                decoration: InputDecoration(
-                                                  focusColor: Colors.yellow,
-                                                  contentPadding:
-                                                      EdgeInsets.all(10),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                    borderSide: BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 1),
+                                        Flexible(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Text('Security Code',
+                                                  style: style.copyWith(
+                                                      fontSize: 11,
+                                                      fontWeight: FontWeight.bold,
+                                                      height: 2)),
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    right: 30,
+                                                    top: 5,
+                                                    bottom: 10),
+                                                child: TextField(
+                                                  style: style.copyWith(
+                                                      fontSize: 16,
+                                                      color: Color(0xff8997a7)),
+                                                  decoration: InputDecoration(
+                                                    focusColor: Colors.yellow,
+                                                    contentPadding:
+                                                        EdgeInsets.all(10),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                      borderSide: BorderSide(
+                                                          color:
+                                                              Colors.transparent,
+                                                          width: 1),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color:
+                                                              Color(0xff22c0e8),
+                                                          width: 1),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    fillColor: Color(0xffdcdfe3),
+                                                    filled: true,
                                                   ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color:
-                                                            Color(0xff22c0e8),
-                                                        width: 1),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  fillColor: Color(0xffdcdfe3),
-                                                  filled: true,
                                                 ),
                                               ),
-                                            ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        Checkbox(
+                                          checkColor: Color(0xff22c0e8),
+                                          activeColor: Colors.white,
+                                          value: save,
+                                          onChanged: (bool value) {
+                                            setState(() {
+                                              save = value;
+                                            });
+                                          },
+                                        ),
+                                        Text('SAVE CARD',
+                                            style: style.copyWith(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold)),
+                                      ],
+                                    ),
+                                    Container(
+                                      width: 100,
+                                      child: RaisedButton(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                new BorderRadius.circular(10.0)),
+                                        color: Color(0xff22c0e8),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Text('ADD CARD',
+                                                style: style.copyWith(
+                                                    fontSize: 12,
+                                                    color: Colors.white)),
                                           ],
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Checkbox(
-                                        checkColor: Color(0xff22c0e8),
-                                        activeColor: Colors.white,
-                                        value: save,
-                                        onChanged: (bool value) {
-                                          setState(() {
-                                            save = value;
-                                          });
+                                        onPressed: () {
+                                          if (_formKey.currentState.validate()) {
+                                            _formKey.currentState.save();
+                                          }
                                         },
                                       ),
-                                      Text('SAVE CARD',
-                                          style: style.copyWith(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                    ],
-                                  ),
-                                  Container(
-                                    width: 100,
-                                    child: RaisedButton(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              new BorderRadius.circular(10.0)),
-                                      color: Color(0xff22c0e8),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: <Widget>[
-                                          Text('ADD CARD',
-                                              style: style.copyWith(
-                                                  fontSize: 12,
-                                                  color: Colors.white)),
-                                        ],
-                                      ),
-                                      onPressed: () {
-                                        if (_formKey.currentState.validate()) {
-                                          _formKey.currentState.save();
-                                        }
-                                      },
-                                    ),
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           );
@@ -330,184 +331,216 @@ class _PaymentMethodState extends State<PaymentMethod>
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return AlertDialog(
-                            content: Form(
-                              key: _formKey,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Text('Add GoPay',
-                                      style: style.copyWith(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold)),
-                                  Text('Phone Number',
-                                      style: style.copyWith(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.bold,
-                                          height: 2)),
-                                  Row(
-                                    children: <Widget>[
-                                      Flexible(
-                                        child: Container(
-                                          margin: EdgeInsets.only(top: 5),
-                                          child: InternationalPhoneInput(
-                                            onPhoneNumberChange:
-                                                onPhoneNumberChange,
-                                            initialPhoneNumber: phoneNumber,
-                                            initialSelection: phoneIsoCode,
-                                            hintText: 'eg. 80123456789',
-                                          ),
-                                        ),
-                                      ),
-                                      // Flexible(
-                                      //   child: Container(
-                                      //     margin: EdgeInsets.only(top: 5),
-                                      //     child: TextField(
-                                      //       style: style.copyWith(
-                                      //           fontSize: 16,
-                                      //           color: Color(0xff8997a7)),
-                                      //       decoration: InputDecoration(
-                                      //         focusColor: Colors.yellow,
-                                      //         contentPadding:
-                                      //             EdgeInsets.all(10),
-                                      //         enabledBorder: OutlineInputBorder(
-                                      //           borderRadius:
-                                      //               BorderRadius.circular(10.0),
-                                      //           borderSide: BorderSide(
-                                      //               color: Colors.transparent,
-                                      //               width: 1),
-                                      //         ),
-                                      //         focusedBorder: OutlineInputBorder(
-                                      //           borderSide: BorderSide(
-                                      //               color: Color(0xff22c0e8),
-                                      //               width: 1),
-                                      //           borderRadius:
-                                      //               BorderRadius.circular(10.0),
-                                      //         ),
-                                      //         fillColor: Color(0xffdcdfe3),
-                                      //         filled: true,
-                                      //       ),
-                                      //     ),
-                                      //   ),
-                                      // ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Flexible(
-                                          child: Container(
-                                        padding: EdgeInsets.only(
-                                            top: 30, bottom: 10, right: 10),
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  new BorderRadius.circular(
-                                                      10.0)),
-                                          color: Color(0xff22c0e8),
-                                          onPressed: () {
-                                            if (_formKey.currentState
-                                                .validate()) {
-                                              _formKey.currentState.save();
-                                            }
-                                          },
-                                          child: Text('SEND OTP',
+                          return AnimatedContainer(
+                            padding: MediaQuery.of(context).padding,
+                            duration: const Duration(milliseconds: 300),
+                            child: AlertDialog(
+                              content: SingleChildScrollView(
+                                scrollDirection: Axis.vertical,
+                                child: Column(
+                                  children: <Widget>[
+                                    Form(
+                                      key: _formKey,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          Text('Add GoPay',
                                               style: style.copyWith(
-                                                  fontSize: 10,
-                                                  color: Colors.white)),
-                                        ),
-                                      )),
-                                      Flexible(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text('OTP',
-                                                style: style.copyWith(
-                                                    fontSize: 11,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 2)),
-                                            Container(
-                                              margin:
-                                                  EdgeInsets.only(right: 30),
-                                              child: TextField(
-                                                style: style.copyWith(
-                                                    fontSize: 16,
-                                                    color: Color(0xff8997a7)),
-                                                decoration: InputDecoration(
-                                                  focusColor: Colors.yellow,
-                                                  contentPadding:
-                                                      EdgeInsets.all(10),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                    borderSide: BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 1),
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold)),
+                                          Text('Phone Number',
+                                              style: style.copyWith(
+                                                  fontSize: 11,
+                                                  fontWeight: FontWeight.bold,
+                                                  height: 2)),
+                                          Row(
+                                            children: <Widget>[
+                                              Flexible(
+                                                child: Container(
+                                                  margin:
+                                                      EdgeInsets.only(top: 5),
+                                                  child:
+                                                      InternationalPhoneInput(
+                                                    onPhoneNumberChange:
+                                                        onPhoneNumberChange,
+                                                    initialPhoneNumber:
+                                                        phoneNumber,
+                                                    initialSelection:
+                                                        phoneIsoCode,
+                                                    hintText: 'eg. 80123456789',
                                                   ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color:
-                                                            Color(0xff22c0e8),
-                                                        width: 1),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  fillColor: Color(0xffdcdfe3),
-                                                  filled: true,
                                                 ),
                                               ),
+                                              // Flexible(
+                                              //   child: Container(
+                                              //     margin: EdgeInsets.only(top: 5),
+                                              //     child: TextField(
+                                              //       style: style.copyWith(
+                                              //           fontSize: 16,
+                                              //           color: Color(0xff8997a7)),
+                                              //       decoration: InputDecoration(
+                                              //         focusColor: Colors.yellow,
+                                              //         contentPadding:
+                                              //             EdgeInsets.all(10),
+                                              //         enabledBorder: OutlineInputBorder(
+                                              //           borderRadius:
+                                              //               BorderRadius.circular(10.0),
+                                              //           borderSide: BorderSide(
+                                              //               color: Colors.transparent,
+                                              //               width: 1),
+                                              //         ),
+                                              //         focusedBorder: OutlineInputBorder(
+                                              //           borderSide: BorderSide(
+                                              //               color: Color(0xff22c0e8),
+                                              //               width: 1),
+                                              //           borderRadius:
+                                              //               BorderRadius.circular(10.0),
+                                              //         ),
+                                              //         fillColor: Color(0xffdcdfe3),
+                                              //         filled: true,
+                                              //       ),
+                                              //     ),
+                                              //   ),
+                                              // ),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: <Widget>[
+                                              Flexible(
+                                                  child: Container(
+                                                padding: EdgeInsets.only(
+                                                    top: 30,
+                                                    bottom: 10,
+                                                    right: 10),
+                                                child: RaisedButton(
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          new BorderRadius
+                                                              .circular(10.0)),
+                                                  color: Color(0xff22c0e8),
+                                                  onPressed: () {
+                                                    if (_formKey.currentState
+                                                        .validate()) {
+                                                      _formKey.currentState
+                                                          .save();
+                                                    }
+                                                  },
+                                                  child: Text('SEND OTP',
+                                                      style: style.copyWith(
+                                                          fontSize: 10,
+                                                          color: Colors.white)),
+                                                ),
+                                              )),
+                                              Flexible(
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: <Widget>[
+                                                    Text('OTP',
+                                                        style: style.copyWith(
+                                                            fontSize: 11,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            height: 2)),
+                                                    Container(
+                                                      margin: EdgeInsets.only(
+                                                          right: 30),
+                                                      child: TextField(
+                                                        style: style.copyWith(
+                                                            fontSize: 16,
+                                                            color: Color(
+                                                                0xff8997a7)),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          focusColor:
+                                                              Colors.yellow,
+                                                          contentPadding:
+                                                              EdgeInsets.all(
+                                                                  10),
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                            borderSide: BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1),
+                                                          ),
+                                                          focusedBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide: BorderSide(
+                                                                color: Color(
+                                                                    0xff22c0e8),
+                                                                width: 1),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                          fillColor:
+                                                              Color(0xffdcdfe3),
+                                                          filled: true,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Text(
+                                                  'By continuing, you agree to :',
+                                                  style: style.copyWith(
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text(
+                                                  '- Dreamjob Terms of Service',
+                                                  style: style.copyWith(
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text('- GoPay Terms of Service',
+                                                  style: style.copyWith(
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      height: 2)),
+                                            ],
+                                          ),
+                                          Container(
+                                            width: 400,
+                                            child: RaisedButton(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      new BorderRadius.circular(
+                                                          10.0)),
+                                              color: Color(0xff22c0e8),
+                                              onPressed: () {
+                                                if (_formKey.currentState
+                                                    .validate()) {
+                                                  _formKey.currentState.save();
+                                                }
+                                              },
+                                              child: Text('Continue',
+                                                  style: style.copyWith(
+                                                      fontSize: 12,
+                                                      color: Colors.white)),
                                             ),
-                                          ],
-                                        ),
+                                          )
+                                        ],
                                       ),
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text('By continuing, you agree to :',
-                                          style: style.copyWith(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold)),
-                                      Text('- Dreamjob Terms of Service',
-                                          style: style.copyWith(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold)),
-                                      Text('- GoPay Terms of Service',
-                                          style: style.copyWith(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold,
-                                              height: 2)),
-                                    ],
-                                  ),
-                                  Container(
-                                    width: 400,
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    child: RaisedButton(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              new BorderRadius.circular(10.0)),
-                                      color: Color(0xff22c0e8),
-                                      onPressed: () {
-                                        if (_formKey.currentState.validate()) {
-                                          _formKey.currentState.save();
-                                        }
-                                      },
-                                      child: Text('Continue',
-                                          style: style.copyWith(
-                                              fontSize: 12,
-                                              color: Colors.white)),
                                     ),
-                                  )
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           );

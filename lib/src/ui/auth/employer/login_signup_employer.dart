@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:space/navigator_employer.dart';
 
-import 'package:space/src/core/models/http_exception.dart';
-import 'package:space/src/core/models/auth.dart';
-import 'package:space/src/ui/auth/employer/intro_employer.dart';
-import 'package:space/src/ui/auth/employer/ui_get_started_employer.dart';
 import 'package:space/src/ui/components/otp_employer.dart';
 
 enum AuthMode { Signup, Login }
