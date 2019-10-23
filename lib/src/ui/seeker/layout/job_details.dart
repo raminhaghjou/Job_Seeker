@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
-import 'package:space/src/core/models/apply.dart';
-import 'package:space/src/core/models/job.dart';
 
-import 'package:space/src/core/models/jobs.dart';
 
 class JobDetails extends StatefulWidget {
   static const routeName = '/job-details';
@@ -16,7 +13,7 @@ class JobDetails extends StatefulWidget {
 
 class _JobDetailsState extends State<JobDetails> {
   var _isLoading = false;
-  var _editJob = List<Job>();
+  // var _editJob = List<Job>();
 // final bool showSaves;
 
 // JobDetails(this.showSaves);
@@ -25,13 +22,13 @@ class _JobDetailsState extends State<JobDetails> {
   Widget build(BuildContext context) {
     // final jobsData = Provider.of<Jobs>(context);
     // final job =  showSaves ? jobsData.savePosts : jobsData.posts;
-    final jobId = ModalRoute.of(context).settings.arguments as String;
+    // final jobId = ModalRoute.of(context).settings.arguments as String;
     // final authData = Provider.of<Auth>(context, listen: false);
     // final save = Provider.of<Save>(context, listen: false);
-    final loadedJob = Provider.of<Jobs>(
-      context,
-      listen: false,
-    ).findById(jobId);
+    // final loadedJob = Provider.of<Jobs>(
+    //   context,
+    //   listen: false,
+    // ).findById(jobId);
     return Material(
       color: Colors.white,
       child: Stack(
@@ -51,7 +48,7 @@ class _JobDetailsState extends State<JobDetails> {
                       color: Colors.white, size: 16)),
               elevation: 1,
               backgroundColor: Colors.transparent,
-              title: Text(loadedJob.employerName,
+              title: Text('Mekuru Ramen',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
@@ -84,7 +81,7 @@ class _JobDetailsState extends State<JobDetails> {
                                       fontSize: 10, color: Colors.white)),
                               Text(
                                   FlutterMoneyFormatter(
-                                          amount: loadedJob.salary,
+                                          amount: 5000000,
                                           settings: MoneyFormatterSettings(
                                               symbol: 'Rp',
                                               thousandSeparator: '.',
@@ -99,7 +96,7 @@ class _JobDetailsState extends State<JobDetails> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
-                              Text(loadedJob.title,
+                              Text('Head Chef',
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -108,7 +105,7 @@ class _JobDetailsState extends State<JobDetails> {
                                 children: <Widget>[
                                   Icon(FeatherIcons.mapPin,
                                       size: 9, color: Color(0xffc4c5c5)),
-                                  Text(loadedJob.location,
+                                  Text('Pontianak, West Borneo',
                                       style: TextStyle(
                                           fontSize: 10,
                                           color: Color(0xffc4c5c5))),
@@ -119,10 +116,10 @@ class _JobDetailsState extends State<JobDetails> {
                                       fontSize: 10,
                                       color: Colors.white,
                                       height: 2.2)),
-                              Text(loadedJob.workingday,
+                              Text('Tuesday - Sunday',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 10)),
-                              Text(loadedJob.workinghour,
+                              Text('08.00 - 21.30',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 10)),
                             ],
@@ -140,7 +137,7 @@ class _JobDetailsState extends State<JobDetails> {
                                 color: Color(0xff65be3e),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
-                                  child: Text(loadedJob.type,
+                                  child: Text('Full Time',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 9)),
                                 ),
@@ -156,10 +153,12 @@ class _JobDetailsState extends State<JobDetails> {
                       left: 30,
                     ),
                     child: CircleAvatar(
-                      backgroundColor: Colors.white,
                       radius: 40,
-                      child: ClipOval(
-                        child: Image.network(loadedJob.imageUrl, height: 80),
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        radius: 38,
+                        backgroundColor: Colors.white,
+                        backgroundImage: AssetImage('assets/mekuru_2.png'),
                       ),
                     ),
                   ),
@@ -184,7 +183,7 @@ class _JobDetailsState extends State<JobDetails> {
                                       color: Colors.black),
                                 ),
                                 TextSpan(
-                                    text: loadedJob.description,
+                                    text: 'Our teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and BeveragesOur teams are up to date with the latest foods, media trends and are keen to prove themselves in this industry and that’s what you want from a food and beverages industry. Industry: Food and Beverages',
                                     style: TextStyle(
                                         fontSize: 12,
                                         color: Color(0xff8997a7),
@@ -204,7 +203,7 @@ class _JobDetailsState extends State<JobDetails> {
                                       height: 2),
                                 ),
                                 TextSpan(
-                                    text: loadedJob.industry,
+                                    text: 'Food & Beverages',
                                     style: TextStyle(
                                         fontSize: 12,
                                         color: Color(0xff8997a7))),
@@ -222,7 +221,7 @@ class _JobDetailsState extends State<JobDetails> {
                                       color: Colors.black),
                                 ),
                                 TextSpan(
-                                    text: loadedJob.education,
+                                    text: 'High School',
                                     style: TextStyle(
                                         fontSize: 12,
                                         color: Color(0xff8997a7),
@@ -238,7 +237,12 @@ class _JobDetailsState extends State<JobDetails> {
                                 color: Colors.black,
                                 height: 2),
                           ),
-                          Text(loadedJob.skill,
+                          Text( '• 1+ years experience in F&B company' 
+                                '• work with passion and team oriented'
+                                '• Kitchen oriented.'
+                                '• can work comfortably alongside both jobuction and serving teams'
+                                '• a strong written and verbal communicator'
+                                '• attention to food serving perfection',
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Color(0xff8997a7),
@@ -250,28 +254,40 @@ class _JobDetailsState extends State<JobDetails> {
                             padding: EdgeInsets.only(bottom: 20),
                             child: Center(
                               child: RaisedButton(
-                                child: _isLoading
-                                    ? CircularProgressIndicator()
-                                    : Text('Apply for a job',
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 15)),
-                                color: Color(0xff22c0e8),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30)),
-                                onPressed: (_isLoading)
-                                    ? null
-                                    : () async {
-                                        setState(() {
-                                          _isLoading = true;
-                                        });
-                                        await Provider.of<Applys>(context,
-                                                listen: false)
-                                            .addApply(_editJob);
-                                        setState(() {
-                                          _isLoading = false;
-                                        });
-                                      },
-                              ),
+                                  child: _isLoading
+                                      ? CircularProgressIndicator()
+                                      : Text('Apply for a job',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15)),
+                                  color: Color(0xff22c0e8),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30)),
+                                  onPressed: () {
+                                    showDialog(
+                                        context: context,
+                                        builder: (_) => FlareGiffyDialog(
+                                              flarePath:
+                                                  'assets/space_demo.flr',
+                                              flareAnimation: 'loading',
+                                              title: Text(
+                                                'Sorry, you have been exceeded daily quota.',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontFamily: 'VarelaRound',
+                                                  color: Color(0xff3b3b3b),
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                              buttonOkText: Text('Subscribe',
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                  )),
+                                              buttonOkColor: Color(0xff57b22f),
+                                              onOkButtonPressed: () {
+                                              },
+                                            ));
+                                  }),
                             ),
                           ),
                         ],
@@ -280,8 +296,7 @@ class _JobDetailsState extends State<JobDetails> {
               ),
             ),
             floatingActionButton: FloatingActionButton(
-              child: Icon(MdiIcons.bookmarkOutline,
-                color: Colors.white),
+              child: Icon(MdiIcons.bookmarkOutline, color: Colors.white),
               onPressed: () {
                 Scaffold.of(context).showSnackBar(
                   SnackBar(

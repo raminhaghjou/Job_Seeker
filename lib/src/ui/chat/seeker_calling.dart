@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:space/src/ui/chat/video_ongoing_call.dart';
+import 'package:space/src/ui/chat/ongoing_call_employer.dart';
+import 'package:space/src/ui/chat/ongoing_call_seeker.dart';
 import 'package:space/src/ui/chat/video_ui_incoming.dart';
 
-class Calling extends StatefulWidget {
-  const Calling({Key key, String title}) : super(key: key);
+class SeekerCalling extends StatefulWidget {
   @override
-  _CallingState createState() => _CallingState();
+  _SeekerCallingState createState() => _SeekerCallingState();
 }
 
-class _CallingState extends State<Calling> with SingleTickerProviderStateMixin {
+class _SeekerCallingState extends State<SeekerCalling> with SingleTickerProviderStateMixin {
   TextStyle style =
       TextStyle(fontFamily: 'VarelaRound', fontSize: 18.0, color: Colors.white);
 
@@ -28,7 +28,7 @@ class _CallingState extends State<Calling> with SingleTickerProviderStateMixin {
             child: Text('On Going Call'),
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Oncalling()));
+                  MaterialPageRoute(builder: (context) => OnCallingSeeker()));
             },
           ),
         ],

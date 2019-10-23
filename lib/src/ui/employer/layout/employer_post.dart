@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
-import 'package:provider/provider.dart';
 
-import 'package:space/src/ui/employer/layout/employer_edit_post.dart';
-import 'package:space/src/core/models/jobs.dart';
-import 'package:space/src/ui/seeker/layout/job_details.dart';
 
 class EmployerPost extends StatelessWidget {
-  final String id;
-  final double salary;
-  final String title;
-  final String type;
-  final String location;
+  // final String id;
+  // final double salary;
+  // final String title;
+  // final String type;
+  // final String location;
 
-  EmployerPost(
-    this.id,
-    this.salary,
-    this.title,
-    this.type,
-    this.location,
-  );
+  // EmployerPost(
+  //   this.id,
+  //   this.salary,
+  //   this.title,
+  //   this.type,
+  //   this.location,
+  // );
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +30,7 @@ class EmployerPost extends StatelessWidget {
                   children: <Widget>[
                     Row(
                       children: <Widget>[
-                        Text(title,
+                        Text('Mekuru Ramen',
                             style: TextStyle(
                                 fontFamily: 'VarelaRound',
                                 fontSize: 12,
@@ -47,7 +43,7 @@ class EmployerPost extends StatelessWidget {
                             color: Color(0xff65be3e),
                             child: Container(
                               padding: EdgeInsets.symmetric(horizontal: 4),
-                              child: Text(type,
+                              child: Text('Full Time',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 9)),
                             ),
@@ -67,7 +63,7 @@ class EmployerPost extends StatelessWidget {
                       children: <Widget>[
                         Icon(Icons.location_on,
                             size: 10, color: Color(0xff8997a7)),
-                        Text(location,
+                        Text('Pontianak, West Borneo',
                             style: TextStyle(
                                 fontSize: 10, color: Color(0xff8997a7))),
                       ],
@@ -79,7 +75,7 @@ class EmployerPost extends StatelessWidget {
                                 fontSize: 10, color: Color(0xff8997a7))),
                         Text(
                             FlutterMoneyFormatter(
-                                    amount: salary,
+                                    amount: 5000000,
                                     settings: MoneyFormatterSettings(
                                         symbol: 'Rp',
                                         thousandSeparator: '.',
@@ -93,10 +89,11 @@ class EmployerPost extends StatelessWidget {
                   ],
                 ),
               ),
-              onTap: () {
-                Navigator.of(context)
-                    .pushNamed(JobDetails.routeName, arguments: id);
-              }),
+              // onTap: () {
+              //   Navigator.of(context)
+              //       .pushNamed(JobDetails.routeName, arguments: id);
+              // }
+              ),
           Padding(
             padding: EdgeInsets.only(right: 15, top: 10),
             child: Row(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import 'package:space/src/core/models/jobs.dart';
 import 'package:space/src/ui/components/horizontal_list.dart';
 
 class RecommendedScreen extends StatefulWidget {
@@ -30,8 +28,8 @@ class _RecommendedScreenState extends State<RecommendedScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final jobData = Provider.of<Jobs>(context);
-    final jobs = jobData.posts;
+    // final jobData = Provider.of<Jobs>(context);
+    // final jobs = jobData.posts;
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: _isLoading
@@ -41,16 +39,7 @@ class _RecommendedScreenState extends State<RecommendedScreen> {
           : ListView.builder(
               padding: EdgeInsets.symmetric(horizontal: 5),
               scrollDirection: Axis.horizontal,
-              itemCount: jobs.length,
-              itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                // builder: (c) => jobs[i],
-                value: jobs[i],
-                child: RecommendedJob(
-                    // jobs[i].id,
-                    // jobs[i].title,
-                    // jobs[i].imageUrl,
-                    ),
-              ),
+              itemBuilder: (ctx, i) => (RecommendedJob()),
             ),
     );
   }

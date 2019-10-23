@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:space/src/core/models/cart.dart';
 import 'package:space/src/ui/seeker/layout/cv.dart';
-import 'package:space/src/ui/seeker/screens/cart_screen.dart';
 
 class SeekerAppBar extends StatelessWidget {
   @override

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:space/src/ui/auth/employer/intro_employer.dart';
-import 'package:space/src/ui/auth/seeker/intro_seeker.dart';
 import 'package:space/src/ui/components/verify_otp_seeker.dart';
 
 class OTPSeeker extends StatelessWidget {
@@ -18,7 +16,7 @@ class OTPSeeker extends StatelessWidget {
                 alignment: Alignment(0, 1),
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 130,vertical: 75),
+                    margin: EdgeInsets.symmetric(horizontal: 130, vertical: 75),
                     height: 30,
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 255, 248, 205),
@@ -169,12 +167,11 @@ class OTPSeeker extends StatelessWidget {
               ),
               Text('Enter your mobile number',
                   style: TextStyle(
-                      color: Colors.redAccent, fontSize: 18, height: 9)),
+                      color: Colors.redAccent, fontSize: 18, height: 6)),
               Text('You will get a OTP message',
                   style: TextStyle(
                       color: Colors.white, fontSize: 14, height: 0.3)),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 20),
                 padding: const EdgeInsets.symmetric(horizontal: 60),
                 child: TextFormField(
                   decoration: InputDecoration(

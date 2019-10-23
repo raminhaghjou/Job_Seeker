@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:space/src/ui/components/category_list_screen.dart';
 import 'package:space/src/ui/components/category_post_screen.dart';
-import 'package:space/src/ui/seeker/screens/jobs_list_screen.dart';
 
 class CategoryList extends StatelessWidget {
   @override
@@ -25,7 +22,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/f&b.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -63,7 +61,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/Startup.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -101,7 +100,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/Corporate.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -139,7 +139,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/market-2.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -177,7 +178,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/Goverment.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -215,7 +217,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/IT.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -253,7 +256,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/market.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -291,7 +295,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/Fashion.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -329,7 +334,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/Transport.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(
@@ -367,7 +373,8 @@ class CategoryList extends StatelessWidget {
                   height: 100,
                   child: SvgPicture.asset(
                     'assets/DKV.svg',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
                 Column(

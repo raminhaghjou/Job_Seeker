@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:space/src/ui/employer/layout/employer_edit_post.dart';
 
 class EmployerAppBar extends StatelessWidget {
@@ -23,13 +24,31 @@ class EmployerAppBar extends StatelessWidget {
         height: 60,
       ),
       actions: [
-        IconButton(
-          icon: Icon(Icons.add),
-          onPressed: () {
+        GestureDetector(
+          onTap: () {
             Navigator.of(context).pushNamed(
               EditPost.routeName,
             );
           },
+          child: Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: Row(
+              children: <Widget>[
+                Icon(
+                  MdiIcons.plusBoxMultipleOutline,
+                  size: 22,
+                  color: Colors.grey[800],
+                ),
+                Text(
+                  'Job',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[800]),
+                )
+              ],
+            ),
+          ),
         ),
       ],
       bottom: TabBar(

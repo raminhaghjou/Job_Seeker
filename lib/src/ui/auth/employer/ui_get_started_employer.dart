@@ -14,18 +14,18 @@ class UiGetStartedEmployer extends StatelessWidget {
           'assets/vector-5.svg',
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
         ),
       Scaffold(
         backgroundColor: Colors.transparent,
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
                Container(
-                child: Image.asset('assets/logo.png', height: 150,)),
+                child: Image.asset('assets/logo.png', height: 120,)),
               Text('Are you ready to find your dream team?',
                   textAlign: TextAlign.center,
                   style: style.copyWith(

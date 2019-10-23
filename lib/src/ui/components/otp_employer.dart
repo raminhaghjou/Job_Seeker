@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:space/src/ui/auth/employer/intro_employer.dart';
-import 'package:space/src/ui/auth/seeker/intro_seeker.dart';
 import 'package:space/src/ui/components/verify_otp_employer.dart';
 
 class OTPEmployer extends StatelessWidget {

@@ -14,7 +14,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flare_flutter: ^1.3.3
-  giffy_dialog: ^1.3.0
+  giffy_dialog: ^1.4.0
   dropdown_formfield: ^0.1.0
   flutter_screenutil: ^0.6.0
   carousel_slider: ^1.3.0
@@ -44,6 +44,8 @@ dependencies:
   intro_views_flutter: ^2.8.0
   circular_bottom_navigation: ^1.0.1
   flutter_svg: ^0.14.2
+  image_picker_saver: ^0.3.0
+  international_phone_input: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -108,9 +110,12 @@ flutter:
   - assets/icon14.png
   - assets/icon15.png
   - assets/icon16.png
+  - assets/icon17.png
+  - assets/icon18.png
+  - assets/icon19.png
+  - assets/icon20.png
+  - assets/icon21.png
   - assets/vector-4.png
-  - assets/vector-5.svg
-  - assets/vector-5.png
   - assets/vector-6.png
   - assets/vector-7.png
   - assets/vector-8.png
@@ -125,14 +130,7 @@ flutter:
   - assets/grunge.png
   - assets/background-2.png
   - assets/up2u.png
-  - assets/logo-hitam.png
   - assets/gmail.png
-  - assets/seeker-1.png
-  - assets/seeker-2.png
-  - assets/seeker-3.png
-  - assets/employer-1.png
-  - assets/employer-2.png
-  - assets/employer-3.png
   - assets/Corporate.png
   - assets/DKV.png
   - assets/Fashion.png
@@ -159,8 +157,16 @@ flutter:
   - assets/Transport.svg
   - assets/f&b.svg
   - assets/dream-cast.svg
-  - assets/ketapang.svg
   - assets/driver.svg
+  - assets/ktp.jpg
+  - assets/seeker-1.svg
+  - assets/seeker-2.svg
+  - assets/seeker-3.svg
+  - assets/employer-1.svg
+  - assets/employer-2.svg
+  - assets/employer-3.svg
+  - assets/vector-5.svg
+  - assets/grunge.svg
   
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

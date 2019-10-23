@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import 'package:space/src/core/models/jobs.dart';
 import 'package:space/src/ui/seeker/layout/job_list.dart';
 
 class JobsListScreen extends StatefulWidget {
@@ -13,8 +11,8 @@ class _JobsListScreenState extends State<JobsListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final jobData = Provider.of<Jobs>(context);
-    final jobs = jobData.posts;
+    // final jobData = Provider.of<Jobs>(context);
+    // final jobs = jobData.posts;
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: _isLoading
@@ -22,16 +20,12 @@ class _JobsListScreenState extends State<JobsListScreen> {
               child: CircularProgressIndicator(),
             )
           : ListView.builder(
-              itemCount: jobs.length,
-              itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                // builder: (c) => jobs[i],
-                value: jobs[i],
-                child: JobsList(
-                    // jobs[i].id,
-                    // jobs[i].title,
-                    // jobs[i].imageUrl,
-                    ),
-              ),
+              padding: EdgeInsets.only(top: 5),
+              itemBuilder: (ctx, i) => (Column(
+                children: <Widget>[
+                  JobsList(),
+                ],
+              )),
             ),
     );
   }

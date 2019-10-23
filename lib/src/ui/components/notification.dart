@@ -2,8 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:space/src/ui/employer/layout/employer_app_bar.dart';
-import 'package:space/src/ui/employer/layout/employer_edit_post.dart';
 
 class NotificationUi extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:intro_views_flutter/Models/page_view_model.dart';
 import 'package:intro_views_flutter/intro_views_flutter.dart';
-import 'package:space/src/ui/auth/employer/ui_get_started_employer.dart';
 import 'package:space/src/ui/auth/seeker/ui_get_started_seeker.dart';
 
 
@@ -9,8 +9,7 @@ class IntroSeeker extends StatelessWidget {
   final pages = [
     PageViewModel(
         pageColor: const Color(0xffff6d00),
-        iconImageAssetPath: 'assets/seeker-1.png',
-        bubble: Image.asset('assets/seeker-1.png'),
+        bubble: SvgPicture.asset('assets/seeker-1.svg'),
         body: Text(
           'More than 100+ Job may suite you.',
         ),
@@ -19,16 +18,15 @@ class IntroSeeker extends StatelessWidget {
         ),
         titleTextStyle: TextStyle(fontFamily: 'VarelaRound', color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
         bodyTextStyle: TextStyle(fontFamily: 'VarelaRound', color: Colors.white, fontSize: 21),
-        mainImage: Image.asset(
-          'assets/seeker-1.png',
+        mainImage: SvgPicture.asset(
+          'assets/seeker-1.svg',
           height: 285.0,
           width: 285.0,
           alignment: Alignment.center,
         )),
     PageViewModel(
         pageColor: const Color(0xffd50000),
-        iconImageAssetPath: 'assets/seeker-2.png',
-        bubble: Image.asset('assets/seeker-2.png'),
+        bubble: SvgPicture.asset('assets/seeker-2.svg'),
         body: Text(
           'Say goodbay to paper, More Effectives and Efficients.',
         ),
@@ -37,22 +35,21 @@ class IntroSeeker extends StatelessWidget {
         ),
         titleTextStyle: TextStyle(fontFamily: 'VarelaRound', color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
         bodyTextStyle: TextStyle(fontFamily: 'VarelaRound', color: Colors.white, fontSize: 21),
-        mainImage: Image.asset(
-          'assets/seeker-2.png',
+        mainImage: SvgPicture.asset(
+          'assets/seeker-2.svg',
           height: 285.0,
           width: 285.0,
           alignment: Alignment.center,
         )),
     PageViewModel(
       pageColor: const Color(0xff64dd17),
-      bubble: Image.asset('assets/seeker-3.png'),
-      iconImageAssetPath: 'assets/seeker-3.png',
+      bubble: SvgPicture.asset('assets/seeker-3.svg'),
       body: Text('Check your applied status. No need to wait for another chances.',
            textAlign: TextAlign.center),
       title:  Text('No worry!',
            textAlign: TextAlign.center),
-      mainImage: Image.asset(
-        'assets/seeker-3.png',
+      mainImage: SvgPicture.asset(
+        'assets/seeker-3.svg',
         height: 285.0,
         width: 285.0,
         alignment: Alignment.center,
@@ -62,14 +59,13 @@ class IntroSeeker extends StatelessWidget {
     ),
     PageViewModel(
       pageColor: const Color(0xff64dd17),
-      bubble: Image.asset('assets/employer-3.png'),
-      iconImageAssetPath: 'assets/employer-3.png',
+      bubble: SvgPicture.asset('assets/employer-3.svg'),
       body: Text('Contact your employer directly with chat and live interview Features.',
            textAlign: TextAlign.center),
       title:  Text('Get in touch directly!',
            textAlign: TextAlign.center),
-      mainImage: Image.asset(
-        'assets/employer-3.png',
+      mainImage: SvgPicture.asset(
+        'assets/employer-3.svg',
         height: 285.0,
         width: 285.0,
         alignment: Alignment.center,

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:space/src/core/models/job.dart';
-import 'package:space/src/core/models/jobs.dart';
 
 class EditPost extends StatefulWidget {
   static const routeName = '/edit-post';
@@ -18,21 +15,21 @@ class _EditPostState extends State<EditPost> {
   final _skillFocusNode = FocusNode();
   final _salaryFocusNode = FocusNode();
   final _form = GlobalKey<FormState>();
-  var _editJob = Job(
-    id: null,
-    title: '',
-    salary: 0,
-    description: '',
-    type: '',
-    workingday: '',
-    workinghour: '',
-    skill: '',
-    education: '',
-    industry: '',
-    location: '',
-    typeSalary: '',
-    gender: '',
-  );
+  // var _editJob = Job(
+  //   id: null,
+  //   title: '',
+  //   salary: 0,
+  //   description: '',
+  //   type: '',
+  //   workingday: '',
+  //   workinghour: '',
+  //   skill: '',
+  //   education: '',
+  //   industry: '',
+  //   location: '',
+  //   typeSalary: '',
+  //   gender: '',
+  // );
   var _initValues = {
     'title': '',
     'salary': '',
@@ -225,23 +222,23 @@ class _EditPostState extends State<EditPost> {
                           }
                           return null;
                         },
-                        onSaved: (value) {
-                          _editJob = Job(
-                              title: value,
-                              salary: _editJob.salary,
-                              description: _editJob.description,
-                              gender: _editJob.gender,
-                              industry: _editJob.industry,
-                              type: _editJob.type,
-                              typeSalary: _editJob.typeSalary,
-                              education: _editJob.education,
-                              skill: _editJob.skill,
-                              workinghour: _editJob.workinghour,
-                              workingday: _editJob.workingday,
-                              location: _editJob.location,
-                              id: _editJob.id,
-                              isSave: _editJob.isSave);
-                        },
+                        // onSaved: (value) {
+                        //   _editJob = Job(
+                        //       title: value,
+                        //       salary: _editJob.salary,
+                        //       description: _editJob.description,
+                        //       gender: _editJob.gender,
+                        //       industry: _editJob.industry,
+                        //       type: _editJob.type,
+                        //       typeSalary: _editJob.typeSalary,
+                        //       education: _editJob.education,
+                        //       skill: _editJob.skill,
+                        //       workinghour: _editJob.workinghour,
+                        //       workingday: _editJob.workingday,
+                        //       location: _editJob.location,
+                        //       id: _editJob.id,
+                        //       isSave: _editJob.isSave);
+                        // },
                       ),
                     ),
                     Padding(
@@ -286,23 +283,23 @@ class _EditPostState extends State<EditPost> {
                           }
                           return null;
                         },
-                        onSaved: (value) {
-                          _editJob = Job(
-                              title: _editJob.title,
-                              salary: _editJob.salary,
-                              description: _editJob.description,
-                              gender: _editJob.gender,
-                              industry: _editJob.industry,
-                              type: _editJob.type,
-                              typeSalary: _editJob.typeSalary,
-                              education: _editJob.education,
-                              skill: _editJob.skill,
-                              workinghour: _editJob.workinghour,
-                              workingday: _editJob.workingday,
-                              location: value,
-                              id: _editJob.id,
-                              isSave: _editJob.isSave);
-                        },
+                        // onSaved: (value) {
+                        //   _editJob = Job(
+                        //       title: _editJob.title,
+                        //       salary: _editJob.salary,
+                        //       description: _editJob.description,
+                        //       gender: _editJob.gender,
+                        //       industry: _editJob.industry,
+                        //       type: _editJob.type,
+                        //       typeSalary: _editJob.typeSalary,
+                        //       education: _editJob.education,
+                        //       skill: _editJob.skill,
+                        //       workinghour: _editJob.workinghour,
+                        //       workingday: _editJob.workingday,
+                        //       location: value,
+                        //       id: _editJob.id,
+                        //       isSave: _editJob.isSave);
+                        // },
                       ),
                     ),
                     Padding(
@@ -347,23 +344,23 @@ class _EditPostState extends State<EditPost> {
                           }
                           return null;
                         },
-                        onSaved: (value) {
-                          _editJob = Job(
-                              title: _editJob.title,
-                              salary: _editJob.salary,
-                              description: value,
-                              gender: _editJob.gender,
-                              industry: _editJob.industry,
-                              type: _editJob.type,
-                              typeSalary: _editJob.typeSalary,
-                              education: _editJob.education,
-                              skill: _editJob.skill,
-                              workinghour: _editJob.workinghour,
-                              workingday: _editJob.workingday,
-                              location: _editJob.location,
-                              id: _editJob.id,
-                              isSave: _editJob.isSave);
-                        },
+                        // onSaved: (value) {
+                        //   _editJob = Job(
+                        //       title: _editJob.title,
+                        //       salary: _editJob.salary,
+                        //       description: value,
+                        //       gender: _editJob.gender,
+                        //       industry: _editJob.industry,
+                        //       type: _editJob.type,
+                        //       typeSalary: _editJob.typeSalary,
+                        //       education: _editJob.education,
+                        //       skill: _editJob.skill,
+                        //       workinghour: _editJob.workinghour,
+                        //       workingday: _editJob.workingday,
+                        //       location: _editJob.location,
+                        //       id: _editJob.id,
+                        //       isSave: _editJob.isSave);
+                        // },
                       ),
                     ),
                     Padding(
@@ -371,24 +368,24 @@ class _EditPostState extends State<EditPost> {
                           EdgeInsets.symmetric(horizontal: 40, vertical: 8),
                       child: FormField<String>(
                         initialValue: _initValues['gender'],
-                        onSaved: (value) {
-                          _editJob = Job(
-                            title: _editJob.title,
-                            id: _editJob.id,
-                            isSave: _editJob.isSave,
-                            salary: _editJob.salary,
-                            gender: value,
-                            typeSalary: _editJob.typeSalary,
-                            type: _editJob.type,
-                            workinghour: _editJob.workinghour,
-                            workingday: _editJob.workingday,
-                            location: _editJob.location,
-                            industry: _editJob.industry,
-                            education: _editJob.education,
-                            skill: _editJob.skill,
-                            description: _editJob.description,
-                          );
-                        },
+                        // onSaved: (value) {
+                        //   _editJob = Job(
+                        //     title: _editJob.title,
+                        //     id: _editJob.id,
+                        //     isSave: _editJob.isSave,
+                        //     salary: _editJob.salary,
+                        //     gender: value,
+                        //     typeSalary: _editJob.typeSalary,
+                        //     type: _editJob.type,
+                        //     workinghour: _editJob.workinghour,
+                        //     workingday: _editJob.workingday,
+                        //     location: _editJob.location,
+                        //     industry: _editJob.industry,
+                        //     education: _editJob.education,
+                        //     skill: _editJob.skill,
+                        //     description: _editJob.description,
+                        //   );
+                        // },
                         builder: (FormFieldState<String> state) {
                           return InputDecorator(
                             decoration: InputDecoration(
@@ -429,24 +426,24 @@ class _EditPostState extends State<EditPost> {
                                   gender = newValue;
                                 });
                               },
-                              onSaved: (value) {
-                                _editJob = Job(
-                                  title: _editJob.title,
-                                  id: _editJob.id,
-                                  isSave: _editJob.isSave,
-                                  salary: _editJob.salary,
-                                  gender: value,
-                                  typeSalary: _editJob.typeSalary,
-                                  type: _editJob.type,
-                                  workinghour: _editJob.workinghour,
-                                  workingday: _editJob.workingday,
-                                  location: _editJob.location,
-                                  industry: _editJob.industry,
-                                  education: _editJob.education,
-                                  skill: _editJob.skill,
-                                  description: _editJob.description,
-                                );
-                              },
+                              // onSaved: (value) {
+                              //   _editJob = Job(
+                              //     title: _editJob.title,
+                              //     id: _editJob.id,
+                              //     isSave: _editJob.isSave,
+                              //     salary: _editJob.salary,
+                              //     gender: value,
+                              //     typeSalary: _editJob.typeSalary,
+                              //     type: _editJob.type,
+                              //     workinghour: _editJob.workinghour,
+                              //     workingday: _editJob.workingday,
+                              //     location: _editJob.location,
+                              //     industry: _editJob.industry,
+                              //     education: _editJob.education,
+                              //     skill: _editJob.skill,
+                              //     description: _editJob.description,
+                              //   );
+                              // },
                               items: <String>[
                                 'Male',
                                 'Female'
@@ -518,24 +515,24 @@ class _EditPostState extends State<EditPost> {
                                     industry = newValue;
                                   });
                                 },
-                                onSaved: (value) {
-                                  _editJob = Job(
-                                    title: _editJob.title,
-                                    id: _editJob.id,
-                                    isSave: _editJob.isSave,
-                                    salary: _editJob.salary,
-                                    type: _editJob.type,
-                                    typeSalary: _editJob.typeSalary,
-                                    gender: _editJob.gender,
-                                    workinghour: _editJob.workinghour,
-                                    workingday: _editJob.workingday,
-                                    location: _editJob.location,
-                                    industry: value,
-                                    education: _editJob.education,
-                                    skill: _editJob.skill,
-                                    description: _editJob.description,
-                                  );
-                                },
+                                // onSaved: (value) {
+                                //   _editJob = Job(
+                                //     title: _editJob.title,
+                                //     id: _editJob.id,
+                                //     isSave: _editJob.isSave,
+                                //     salary: _editJob.salary,
+                                //     type: _editJob.type,
+                                //     typeSalary: _editJob.typeSalary,
+                                //     gender: _editJob.gender,
+                                //     workinghour: _editJob.workinghour,
+                                //     workingday: _editJob.workingday,
+                                //     location: _editJob.location,
+                                //     industry: value,
+                                //     education: _editJob.education,
+                                //     skill: _editJob.skill,
+                                //     description: _editJob.description,
+                                //   );
+                                // },
                                 items: <String>[
                                   'Resturants',
                                   'Hotels'
@@ -608,23 +605,23 @@ class _EditPostState extends State<EditPost> {
                                     type = newValue;
                                   });
                                 },
-                                onSaved: (value) {
-                                  _editJob = Job(
-                                      title: _editJob.title,
-                                      id: _editJob.id,
-                                      isSave: _editJob.isSave,
-                                      salary: _editJob.salary,
-                                      type: value,
-                                      typeSalary: _editJob.typeSalary,
-                                      gender: _editJob.gender,
-                                      workinghour: _editJob.workinghour,
-                                      workingday: _editJob.workingday,
-                                      location: _editJob.location,
-                                      industry: _editJob.industry,
-                                      education: _editJob.education,
-                                      skill: _editJob.skill,
-                                      description: _editJob.description);
-                                },
+                                // onSaved: (value) {
+                                //   _editJob = Job(
+                                //       title: _editJob.title,
+                                //       id: _editJob.id,
+                                //       isSave: _editJob.isSave,
+                                //       salary: _editJob.salary,
+                                //       type: value,
+                                //       typeSalary: _editJob.typeSalary,
+                                //       gender: _editJob.gender,
+                                //       workinghour: _editJob.workinghour,
+                                //       workingday: _editJob.workingday,
+                                //       location: _editJob.location,
+                                //       industry: _editJob.industry,
+                                //       education: _editJob.education,
+                                //       skill: _editJob.skill,
+                                //       description: _editJob.description);
+                                // },
                                 items: <String>[
                                   'Full Time',
                                   'Part Time',
@@ -700,23 +697,23 @@ class _EditPostState extends State<EditPost> {
                                     typeSalary = newValue;
                                   });
                                 },
-                                onSaved: (value) {
-                                  _editJob = Job(
-                                      title: _editJob.title,
-                                      id: _editJob.id,
-                                      isSave: _editJob.isSave,
-                                      salary: _editJob.salary,
-                                      type: _editJob.type,
-                                      typeSalary: value,
-                                      gender: _editJob.gender,
-                                      workinghour: _editJob.workinghour,
-                                      workingday: _editJob.workingday,
-                                      location: _editJob.location,
-                                      industry: _editJob.industry,
-                                      education: _editJob.education,
-                                      skill: _editJob.skill,
-                                      description: _editJob.description);
-                                },
+                                // onSaved: (value) {
+                                //   _editJob = Job(
+                                //       title: _editJob.title,
+                                //       id: _editJob.id,
+                                //       isSave: _editJob.isSave,
+                                //       salary: _editJob.salary,
+                                //       type: _editJob.type,
+                                //       typeSalary: value,
+                                //       gender: _editJob.gender,
+                                //       workinghour: _editJob.workinghour,
+                                //       workingday: _editJob.workingday,
+                                //       location: _editJob.location,
+                                //       industry: _editJob.industry,
+                                //       education: _editJob.education,
+                                //       skill: _editJob.skill,
+                                //       description: _editJob.description);
+                                // },
                                 items: <String>[
                                   'Per Hour',
                                   'Per Day',
@@ -791,24 +788,24 @@ class _EditPostState extends State<EditPost> {
                                     education = newValue;
                                   });
                                 },
-                                onSaved: (value) {
-                                  _editJob = Job(
-                                    title: _editJob.title,
-                                    id: _editJob.id,
-                                    isSave: _editJob.isSave,
-                                    salary: _editJob.salary,
-                                    type: _editJob.type,
-                                    typeSalary: _editJob.typeSalary,
-                                    gender: _editJob.gender,
-                                    workinghour: _editJob.workinghour,
-                                    workingday: _editJob.workingday,
-                                    location: _editJob.location,
-                                    industry: _editJob.industry,
-                                    education: value,
-                                    skill: _editJob.skill,
-                                    description: _editJob.description,
-                                  );
-                                },
+                                // onSaved: (value) {
+                                //   _editJob = Job(
+                                //     title: _editJob.title,
+                                //     id: _editJob.id,
+                                //     isSave: _editJob.isSave,
+                                //     salary: _editJob.salary,
+                                //     type: _editJob.type,
+                                //     typeSalary: _editJob.typeSalary,
+                                //     gender: _editJob.gender,
+                                //     workinghour: _editJob.workinghour,
+                                //     workingday: _editJob.workingday,
+                                //     location: _editJob.location,
+                                //     industry: _editJob.industry,
+                                //     education: value,
+                                //     skill: _editJob.skill,
+                                //     description: _editJob.description,
+                                //   );
+                                // },
                                 items: <String>[
                                   'SD',
                                   'SMP',
@@ -881,23 +878,23 @@ class _EditPostState extends State<EditPost> {
                           }
                           return null;
                         },
-                        onSaved: (value) {
-                          _editJob = Job(
-                              title: _editJob.title,
-                              salary: _editJob.salary,
-                              description: _editJob.description,
-                              gender: _editJob.gender,
-                              industry: _editJob.industry,
-                              type: _editJob.type,
-                              typeSalary: _editJob.typeSalary,
-                              education: _editJob.education,
-                              skill: _editJob.skill,
-                              workinghour: _editJob.workinghour,
-                              workingday: value,
-                              location: _editJob.location,
-                              id: _editJob.id,
-                              isSave: _editJob.isSave);
-                        },
+                        // onSaved: (value) {
+                        //   _editJob = Job(
+                        //       title: _editJob.title,
+                        //       salary: _editJob.salary,
+                        //       description: _editJob.description,
+                        //       gender: _editJob.gender,
+                        //       industry: _editJob.industry,
+                        //       type: _editJob.type,
+                        //       typeSalary: _editJob.typeSalary,
+                        //       education: _editJob.education,
+                        //       skill: _editJob.skill,
+                        //       workinghour: _editJob.workinghour,
+                        //       workingday: value,
+                        //       location: _editJob.location,
+                        //       id: _editJob.id,
+                        //       isSave: _editJob.isSave);
+                        // },
                       ),
                     ),
                     Padding(
@@ -941,23 +938,23 @@ class _EditPostState extends State<EditPost> {
                           }
                           return null;
                         },
-                        onSaved: (value) {
-                          _editJob = Job(
-                              title: _editJob.title,
-                              salary: _editJob.salary,
-                              description: _editJob.description,
-                              gender: _editJob.gender,
-                              industry: _editJob.industry,
-                              type: _editJob.type,
-                              typeSalary: _editJob.typeSalary,
-                              education: _editJob.education,
-                              skill: _editJob.skill,
-                              workinghour: value,
-                              workingday: _editJob.workingday,
-                              location: _editJob.location,
-                              id: _editJob.id,
-                              isSave: _editJob.isSave);
-                        },
+                        // onSaved: (value) {
+                        //   _editJob = Job(
+                        //       title: _editJob.title,
+                        //       salary: _editJob.salary,
+                        //       description: _editJob.description,
+                        //       gender: _editJob.gender,
+                        //       industry: _editJob.industry,
+                        //       type: _editJob.type,
+                        //       typeSalary: _editJob.typeSalary,
+                        //       education: _editJob.education,
+                        //       skill: _editJob.skill,
+                        //       workinghour: value,
+                        //       workingday: _editJob.workingday,
+                        //       location: _editJob.location,
+                        //       id: _editJob.id,
+                        //       isSave: _editJob.isSave);
+                        // },
                       ),
                     ),
                     Padding(
@@ -1001,23 +998,23 @@ class _EditPostState extends State<EditPost> {
                           }
                           return null;
                         },
-                        onSaved: (value) {
-                          _editJob = Job(
-                              title: _editJob.title,
-                              salary: _editJob.salary,
-                              description: _editJob.description,
-                              gender: _editJob.gender,
-                              industry: _editJob.industry,
-                              type: _editJob.type,
-                              typeSalary: _editJob.typeSalary,
-                              education: _editJob.education,
-                              skill: value,
-                              workinghour: _editJob.workinghour,
-                              workingday: _editJob.workingday,
-                              location: _editJob.location,
-                              id: _editJob.id,
-                              isSave: _editJob.isSave);
-                        },
+                        // onSaved: (value) {
+                        //   _editJob = Job(
+                        //       title: _editJob.title,
+                        //       salary: _editJob.salary,
+                        //       description: _editJob.description,
+                        //       gender: _editJob.gender,
+                        //       industry: _editJob.industry,
+                        //       type: _editJob.type,
+                        //       typeSalary: _editJob.typeSalary,
+                        //       education: _editJob.education,
+                        //       skill: value,
+                        //       workinghour: _editJob.workinghour,
+                        //       workingday: _editJob.workingday,
+                        //       location: _editJob.location,
+                        //       id: _editJob.id,
+                        //       isSave: _editJob.isSave);
+                        // },
                       ),
                     ),
                     Padding(
@@ -1069,23 +1066,23 @@ class _EditPostState extends State<EditPost> {
                           }
                           return null;
                         },
-                        onSaved: (value) {
-                          _editJob = Job(
-                              title: _editJob.title,
-                              salary: double.parse(value),
-                              description: _editJob.description,
-                              gender: _editJob.gender,
-                              industry: _editJob.industry,
-                              type: _editJob.type,
-                              typeSalary: _editJob.typeSalary,
-                              education: _editJob.education,
-                              skill: _editJob.skill,
-                              workinghour: _editJob.workinghour,
-                              workingday: _editJob.workingday,
-                              location: _editJob.location,
-                              id: _editJob.id,
-                              isSave: _editJob.isSave);
-                        },
+                        // onSaved: (value) {
+                        //   _editJob = Job(
+                        //       title: _editJob.title,
+                        //       salary: double.parse(value),
+                        //       description: _editJob.description,
+                        //       gender: _editJob.gender,
+                        //       industry: _editJob.industry,
+                        //       type: _editJob.type,
+                        //       typeSalary: _editJob.typeSalary,
+                        //       education: _editJob.education,
+                        //       skill: _editJob.skill,
+                        //       workinghour: _editJob.workinghour,
+                        //       workingday: _editJob.workingday,
+                        //       location: _editJob.location,
+                        //       id: _editJob.id,
+                        //       isSave: _editJob.isSave);
+                        // },
                       ),
                     ),
                     Padding(

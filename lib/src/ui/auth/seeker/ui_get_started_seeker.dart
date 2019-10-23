@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:space/navigator_employer.dart';
 import 'package:space/navigator_seeker.dart';
 
 class UiGetStartedSeeker extends StatelessWidget {
@@ -15,18 +14,18 @@ class UiGetStartedSeeker extends StatelessWidget {
           'assets/vector-5.svg',
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
         ),
      Scaffold(
        backgroundColor: Colors.transparent,
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         height: MediaQuery.of(context).size.height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Container(
-                child: Image.asset('assets/logo.png', height: 150,)),
+                child: Image.asset('assets/logo.png', height: 120,)),
             Text('Are you ready to chase your dreams?',
                 textAlign: TextAlign.center,
                 style: style.copyWith(

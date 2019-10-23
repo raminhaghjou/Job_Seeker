@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
-import 'package:space/src/ui/chat/video_ui_calling.dart';
+import 'package:space/src/ui/chat/seeker_calling.dart';
 
-class InboxUiChat extends StatelessWidget {
+class ChatSeeker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle style = TextStyle(fontFamily: 'VarelaRound', fontSize: 20.0);
@@ -61,7 +61,7 @@ class InboxUiChat extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              Calling()));
+                                              SeekerCalling()));
                                 },
           ),
         ],

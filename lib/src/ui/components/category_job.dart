@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:space/src/ui/components/category_list_screen.dart';
 import 'package:space/src/ui/components/category_post_screen.dart';
-import 'package:space/src/ui/seeker/screens/jobs_list_screen.dart';
 
 class CategoryJob extends StatelessWidget {
   @override
@@ -29,7 +28,8 @@ class CategoryJob extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(10),
                     child: SvgPicture.asset(
                       'assets/f&b.svg',
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.bottomCenter,
                     ),
                   ),
                 ),
@@ -80,7 +80,8 @@ class CategoryJob extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(10),
                     child: SvgPicture.asset(
                       'assets/Fashion.svg',
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.bottomCenter,
                     ),
                   ),
                 ),
@@ -131,7 +132,8 @@ class CategoryJob extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(10),
                     child: SvgPicture.asset(
                       'assets/market-2.svg',
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.bottomCenter,
                     ),
                   ),
                 ),
@@ -182,7 +184,8 @@ class CategoryJob extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(10),
                     child: SvgPicture.asset(
                       'assets/Corporate.svg',
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.bottomCenter,
                     ),
                   ),
                 ),
@@ -233,7 +236,8 @@ class CategoryJob extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(10),
                     child: SvgPicture.asset(
                       'assets/others.svg',
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.bottomCenter,
                     ),
                   ),
                 ),

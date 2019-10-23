@@ -1,40 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter/services.dart';
-
-void main() {
-  runApp(MyApp());
-
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      systemNavigationBarColor: Colors.white,
-      systemNavigationBarDividerColor: Colors.black,
-      systemNavigationBarIconBrightness: Brightness.dark,
-    ),
-  );
-}
-
-class MyApp extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-  debugShowCheckedModeBanner: false,
-  theme: ThemeData(
-    brightness: Brightness.light,
-    primaryColor: Colors.black,
-    scaffoldBackgroundColor: Colors.black,
-  ),
-  home: const UiInviteFriends(),
-);
-  }
-}
 
 
 class UiInviteFriends extends StatefulWidget {
-  const UiInviteFriends({ Key key, String title }) : super(key: key);
   @override
   _UiInviteFriendsState createState() => _UiInviteFriendsState();
 }

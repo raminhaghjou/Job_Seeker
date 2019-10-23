@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:provider/provider.dart';
 
-import 'package:space/src/core/models/jobs.dart';
 import 'package:space/src/ui/seeker/layout/job_list.dart';
 
 class CategoryPostScreen extends StatefulWidget {
@@ -15,8 +12,8 @@ class _CategoryPostScreenState extends State<CategoryPostScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final jobData = Provider.of<Jobs>(context);
-    final jobs = jobData.posts;
+    // final jobData = Provider.of<Jobs>(context);
+    // final jobs = jobData.posts;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
@@ -43,16 +40,9 @@ class _CategoryPostScreenState extends State<CategoryPostScreen> {
               child: CircularProgressIndicator(),
             )
           : ListView.builder(
-              itemCount: jobs.length,
-              itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+              itemBuilder: (ctx, i) => (
                 // builder: (c) => jobs[i],
-                value: jobs[i],
-                child: JobsList(
-                    // jobs[i].id,
-                    // jobs[i].title,
-                    // jobs[i].imageUrl,
-                    ),
-              ),
+                 JobsList()),
             ),
     );
   }

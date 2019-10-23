@@ -26,7 +26,6 @@ void main() {
 }
 
 class SeekerProfile extends StatefulWidget {
-  const SeekerProfile({Key key, String title}) : super(key: key);
   @override
   _SeekerProfileState createState() => _SeekerProfileState();
 }

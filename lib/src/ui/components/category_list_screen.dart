@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:provider/provider.dart';
 
-import 'package:space/src/ui/components/category_job.dart';
 import 'package:space/src/ui/components/category_list.dart';
 
 class CategoryListScreen extends StatefulWidget {

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:space/src/core/models/auth.dart';
-import 'package:space/src/ui/seeker/layout/seeker_profile_setting.dart';
-import 'package:space/src/ui/seeker/layout/seeker_profile_view.dart';
+import 'package:space/src/ui/employer/layout/employer_profile_setting.dart';
+import 'package:space/src/ui/employer/layout/employer_profile_view.dart';
 import 'package:space/src/ui/settings/about_us.dart';
 import 'package:space/src/ui/settings/setting_ui_help.dart';
 import 'package:space/src/ui/settings/setting_ui_payment.dart';
@@ -24,8 +24,8 @@ class EmployerDrawer extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                       context,
-                      new MaterialPageRoute(
-                          builder: (context) => SeekerProfileView()));
+                      MaterialPageRoute(
+                          builder: (context) => EmployerProfileView()));
                 },
                 leading: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,7 +89,7 @@ class EmployerDrawer extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => SettingSeekerProfile()),
+                          builder: (context) => EmployerProfileSetting()),
                     );
                   }),
             ),

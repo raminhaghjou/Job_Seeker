@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:space/src/core/models/job.dart';
-import 'package:space/src/core/models/jobs.dart';
 
 class CVSeeker extends StatefulWidget {
   static const routeName = '/cv-seeker';
@@ -947,6 +944,35 @@ class _CVSeekerState extends State<CVSeeker> {
                                       ),
                                     ],
                                   ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 15),
+                              height: 55,
+                              padding: EdgeInsets.symmetric(horizontal: 8),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.circular(5)
+                                      ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                 Row(
+                                      children: [
+                                        Text('Add Attachment ',
+                                          style: TextStyle(
+                                              fontSize: 14, color: Colors.white)),
+                                        Icon(
+                                          MdiIcons.helpCircleOutline, 
+                                          color: Colors.white, 
+                                          size: 16, 
+                                          ),
+                                      ],
+                                    ),
+                                Icon(MdiIcons.plusCircleOutline,
+                                      color: Colors.white, size: 22)
                                 ],
                               ),
                             ),

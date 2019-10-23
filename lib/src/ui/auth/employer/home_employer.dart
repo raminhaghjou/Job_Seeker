@@ -1,15 +1,12 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:space/src/ui/components/category_job_screen.dart';
+import 'package:space/src/ui/components/near_job_screen.dart';
 
 import 'package:space/src/ui/employer/widgets/employer_app_drawer.dart';
 import 'package:space/src/ui/components/horizontal_screen.dart';
-import 'package:space/src/ui/components/recommended_screen.dart';
 import 'package:space/src/ui/seeker/layout/seeker_profile_view.dart';
 
 class HomePageEmployer extends StatefulWidget {
@@ -104,8 +101,9 @@ class _HomePageEmployerState extends State<HomePageEmployer> {
                         dotSpacing: 15,
                         dotIncreasedColor: Colors.amber,
                         dotBgColor: Colors.transparent,
+                        dotColor: Colors.amber[100],
                         dotPosition: DotPosition.bottomLeft,
-                        dotVerticalPadding: 5.0,
+                        dotVerticalPadding: 0.0,
                         showIndicator: true,
                         dotHorizontalPadding: 10.0,
                         indicatorBgPadding: 0,
@@ -167,7 +165,7 @@ class _HomePageEmployerState extends State<HomePageEmployer> {
                     Container(
                         height: 50,
                         child: ListTile(
-                          leading: Text('Recent Job',
+                          leading: Text('Job Near You',
                               style: style2.copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -183,7 +181,7 @@ class _HomePageEmployerState extends State<HomePageEmployer> {
                         )),
                     SizedBox(
                       height: 180,
-                      child: RecentScreen(),
+                      child: NearJobScreen(),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10),

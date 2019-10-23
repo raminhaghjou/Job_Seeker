@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:space/src/ui/chat/inbox_ui_chat.dart';
+import 'package:space/src/ui/chat/chat_seeker.dart';
 import 'package:space/src/ui/seeker/layout/seeker_profile_view.dart';
 
-class InboxUiList extends StatefulWidget {
+class ChatListSeeker extends StatefulWidget {
   @override
-  _InboxUiListState createState() => _InboxUiListState();
+  _ChatListSeekerState createState() => _ChatListSeekerState();
 }
 
-class _InboxUiListState extends State<InboxUiList>
+class _ChatListSeekerState extends State<ChatListSeeker>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,7 @@ class _InboxUiListState extends State<InboxUiList>
                       style: TextStyle(fontSize: 12, color: Color(0xff757575))),
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => InboxUiChat()));
+                        MaterialPageRoute(builder: (context) => ChatSeeker()));
                   }),
             ),
             Container(

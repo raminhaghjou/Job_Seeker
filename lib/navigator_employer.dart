@@ -3,8 +3,7 @@ import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/services.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:space/src/ui/auth/employer/home_employer.dart';
-import 'package:space/src/ui/chat/inbox_ui_list.dart';
-import 'package:space/src/ui/components/landing_404_page.dart';
+import 'package:space/src/ui/chat/chat_list_employer.dart';
 import 'package:space/src/ui/components/notification.dart';
 import 'package:space/src/ui/employer/layout/employer_edit_post.dart';
 import 'package:space/src/ui/employer/screens/employer_tabs.dart';
@@ -28,7 +27,7 @@ class _EmployerNavigatorState extends State<EmployerNavigator> {
     HomePageEmployer(),
     EmployerTabs(),
     EditPost(),
-    InboxUiList(),
+    ChatListEmployer(),
     NotificationUi(),
   ];
   @override

@@ -1,15 +1,13 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:gradient_app_bar/gradient_app_bar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:space/src/ui/components/category_job_screen.dart';
+import 'package:space/src/ui/components/near_job_screen.dart';
 
-import 'package:space/src/ui/employer/widgets/employer_app_drawer.dart';
 import 'package:space/src/ui/components/horizontal_screen.dart';
-import 'package:space/src/ui/components/recommended_screen.dart';
 import 'package:space/src/ui/seeker/layout/seeker_profile_view.dart';
+import 'package:space/src/ui/seeker/widgets/seeker_app_drawer.dart';
 
 class HomePageSeeker extends StatefulWidget {
   static const routeName = '/home_page_seeker';
@@ -41,13 +39,13 @@ class _HomePageSeekerState extends State<HomePageSeeker> {
         Container(
           height: 94,
           width: MediaQuery.of(context).size.width,
-          child: Image.asset(
-            'assets/vector-5.png',
+          child: SvgPicture.asset(
+            'assets/vector-5.svg',
             fit: BoxFit.fitWidth,
           ),
         ),
         Scaffold(
-          drawer: EmployerDrawer(),
+          drawer: AppDrawer(),
           backgroundColor: Colors.transparent,
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(70), // here the desired height
@@ -94,12 +92,8 @@ class _HomePageSeekerState extends State<HomePageSeeker> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                      height: 120,
+                      height: 110,
                       child: Carousel(
-                        borderRadius: true,
-                        boxFit: BoxFit.fill,
                         autoplay: true,
                         animationCurve: Curves.fastOutSlowIn,
                         animationDuration: Duration(milliseconds: 2000),
@@ -107,18 +101,44 @@ class _HomePageSeekerState extends State<HomePageSeeker> {
                         dotSpacing: 15,
                         dotIncreasedColor: Colors.amber,
                         dotBgColor: Colors.transparent,
+                        dotColor: Colors.amber[100],
                         dotPosition: DotPosition.bottomLeft,
-                        dotVerticalPadding: 5.0,
+                        dotVerticalPadding: 0.0,
                         showIndicator: true,
                         dotHorizontalPadding: 10.0,
                         indicatorBgPadding: 0,
                         images: [
-                          NetworkImage(
-                              'https://www.theatreartlife.com/wp-content/uploads/TheMarket-Ad-TD-800x200-768x192.png'),
-                          NetworkImage(
-                              'http://tapsbus.com/wp-content/uploads/2015/06/driver-job-fi.png'),
-                          NetworkImage(
-                              'https://i0.wp.com/www.thehtn.co.uk/wp-content/uploads/2019/08/Latest-News-3-copy-3.png?fit=800%2C200&ssl=1'),
+                          Padding(
+                            padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                            child: ClipRRect(
+                              borderRadius: new BorderRadius.circular(10),
+                              child: SvgPicture.asset(
+                                'assets/dream-cast.svg',
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                            child: ClipRRect(
+                              borderRadius: new BorderRadius.circular(10),
+                              child: SvgPicture.asset(
+                                'assets/dream-cast.svg',
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                            child: ClipRRect(
+                              borderRadius: new BorderRadius.circular(10),
+                              child: SvgPicture.asset(
+                                'assets/dream-cast.svg',
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -145,7 +165,7 @@ class _HomePageSeekerState extends State<HomePageSeeker> {
                     Container(
                         height: 50,
                         child: ListTile(
-                          leading: Text('Job Around You',
+                          leading: Text('Job Near You',
                               style: style2.copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -161,7 +181,7 @@ class _HomePageSeekerState extends State<HomePageSeeker> {
                         )),
                     SizedBox(
                       height: 180,
-                      child: RecentScreen(),
+                      child: NearJobScreen(),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10),

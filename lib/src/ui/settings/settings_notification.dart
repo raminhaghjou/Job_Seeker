@@ -1,32 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
-
-void main() {
-  runApp(MaterialApp(
-    initialRoute: '/',
-    routes: {
-      '/': (context) => SettingNotification(),
-    },
-  ));
-}
-
-class MyApp extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-  debugShowCheckedModeBanner: false,
-  theme: ThemeData(
-    brightness: Brightness.light,
-    primaryColor: Colors.black,
-    scaffoldBackgroundColor: Colors.white,
-  ),
-  home: const SettingNotification(),
-);
-  }
-}
-
 
 class SettingNotification extends StatefulWidget {
   const SettingNotification({ Key key, String title }) : super(key: key);

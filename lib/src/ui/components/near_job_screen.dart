@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:space/src/ui/components/near_job.dart';
 
-import 'package:space/src/core/models/jobs.dart';
-import 'package:space/src/ui/components/recommended_job.dart';
+class NearJobScreen extends StatefulWidget {
 
-class RecentScreen extends StatefulWidget {
-
-  _RecentScreenState createState() => _RecentScreenState();
+  _NearJobScreenState createState() => _NearJobScreenState();
 }
 
-class _RecentScreenState extends State<RecentScreen> {
+class _NearJobScreenState extends State<NearJobScreen> {
   // var _isInit = true;
   var _isLoading = false;
 
@@ -32,8 +29,8 @@ class _RecentScreenState extends State<RecentScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final jobData = Provider.of<Jobs>(context);
-    final jobs = jobData.posts;
+    // final jobData = Provider.of<Jobs>(context);
+    // final jobs = jobData.posts;
     return Scaffold(
       backgroundColor: Colors.transparent,
        body: _isLoading
@@ -43,15 +40,9 @@ class _RecentScreenState extends State<RecentScreen> {
           : ListView.builder(
       controller: ScrollController(initialScrollOffset: 0),
       itemCount: 2,
-      itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-            // builder: (c) => jobs[i],
-            value: jobs[i],
-            child: RecentJob(
-                // jobs[i].id,
-                // jobs[i].title,
-                // jobs[i].imageUrl,
-                ),
-          ),
+      itemBuilder: (ctx, i) => (
+            NearJob()
+      ),
 
     ),
     );

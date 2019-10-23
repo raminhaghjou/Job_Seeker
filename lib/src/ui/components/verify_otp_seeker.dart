@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:space/src/ui/auth/employer/intro_employer.dart';
 import 'package:space/src/ui/auth/seeker/intro_seeker.dart';
 
 class VerifySeeker extends StatelessWidget {
